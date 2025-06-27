@@ -1,0 +1,4335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmarTech - Premium iPhone Store</title>
+  
+  <style>
+    .color-option.active {
+      transform: scale(1.2);
+      transition: transform 0.2s ease;
+    }
+
+    .storage-option.active {
+      background-color: #0071e3;
+      color: white;
+      border-color: #0071e3;
+    }
+
+    .storage-option:hover {
+      border-color: #0071e3;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: "#0071e3", secondary: "#86868b" },
+          borderRadius: {
+            none: "0px",
+            sm: "4px",
+            DEFAULT: "8px",
+            md: "12px",
+            lg: "16px",
+            xl: "20px",
+            "2xl": "24px",
+            "3xl": "32px",
+            full: "9999px",
+            button: "8px",
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+  <style>
+    :where([class^="ri-"])::before {
+      content: "\f3c2";
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .hero-section {
+      background-image: url('https://readdy.ai/api/search-image?query=Minimalist%2520gradient%2520background%2520with%2520soft%2520blue%2520to%2520white%2520transition%2520from%2520left%2520to%2520right.%2520The%2520left%2520side%2520has%2520a%2520clean%2520white%2520space%2520for%2520text%2C%2520while%2520the%2520right%2520side%2520features%2520a%2520subtle%2520blue%2520gradient.%2520The%2520design%2520is%2520modern%2C%2520sleek%2C%2520and%2520reminiscent%2520of%2520Apple%2527s%2520aesthetic.%2520Perfect%2520for%2520showcasing%2520premium%2520tech%2520products%2520with%2520ample%2520negative%2520space.&width=1920&height=800&seq=hero1&orientation=landscape');
+      background-size: cover;
+      background-position: center;
+    }
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .custom-checkbox {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .custom-checkbox input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .custom-checkbox input:checked~.checkmark {
+      background-color: #0071e3;
+      border-color: #0071e3;
+    }
+
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    .custom-checkbox input:checked~.checkmark:after {
+      display: block;
+    }
+
+    .custom-checkbox .checkmark:after {
+      left: 7px;
+      top: 3px;
+      width: 6px;
+      height: 12px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+
+    .custom-radio {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .custom-radio input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .radio-mark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 50%;
+    }
+
+    .custom-radio input:checked~.radio-mark {
+      background-color: #fff;
+      border-color: #0071e3;
+    }
+
+    .radio-mark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    .custom-radio input:checked~.radio-mark:after {
+      display: block;
+    }
+
+    .custom-radio .radio-mark:after {
+      top: 4px;
+      left: 4px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #0071e3;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 24px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input:checked+.slider {
+      background-color: #0071e3;
+    }
+
+    input:checked+.slider:before {
+      transform: translateX(26px);
+    }
+
+    .custom-range {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 4px;
+      background: #ddd;
+      outline: none;
+      border-radius: 4px;
+    }
+
+    .custom-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      background: #0071e3;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .custom-range::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      background: #0071e3;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    .checkout-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #27ae60; /* Green */
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  margin-top: 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.checkout-btn:hover {
+  background-color: #219653; /* Darker green */
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.checkout-btn:active {
+  transform: translateY(0);
+}
+
+#checkout-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+/* Cart Modal Styles */
+#cartModal {
+  transition: opacity 0.3s ease;
+}
+
+#cartDrawer {
+  transition: transform 0.3s ease;
+}
+
+#cartModal.show {
+  display: block;
+}
+
+#cartModal.show #cartDrawer {
+  transform: translateX(0);
+}
+
+/* Checkout Page Styles */
+#checkout-page {
+  transition: all 0.3s ease;
+}
+
+#checkout-page.show {
+  display: block;
+}
+
+/* Shared Button Styles */
+.checkout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.checkout-btn:hover {
+  background-color: #2563eb;
+}
+
+.checkout-btn:active {
+  transform: scale(0.98);
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: #3b82f6;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Form Styles */
+.form-group input {
+  border: 1px solid #d1d5db;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px #3b82f6;
+}
+
+/* Checkout Page */
+#checkout-page {
+  transition: opacity 0.3s ease;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px #3b82f6;
+}
+
+/* Custom Select Arrow */
+.form-group select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23333436'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1.25rem;
+}
+
+/* Checkout Button */
+.checkout-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.checkout-btn:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.checkout-btn:active {
+  transform: translateY(0);
+}
+
+/* Order Summary */
+#checkout-items {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e0 transparent;
+}
+
+#checkout-items::-webkit-scrollbar {
+  width: 4px;
+}
+
+#checkout-items::-webkit-scrollbar-thumb {
+  background-color: #cbd5e0;
+  border-radius: 2px;
+}
+
+/* Responsive */
+@media (max-width: 1023px) {
+  #checkout-page {
+    padding: 1rem;
+  }
+}
+  </style>
+</head>
+
+<body class="bg-white">
+  <!-- Header & Navigation -->
+  <header class="fixed top-0 left-0 right-0 bg-white bg-opacity-95 shadow-sm z-50">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center">
+        <a href="#" class="text-3xl font-['Pacifico'] text-primary">SmarTech</a>
+      </div>
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#" class="text-gray-800 hover:text-primary transition-colors font-medium">Home</a>
+        <a href="#shop" class="text-gray-800 hover:text-primary transition-colors font-medium">Shop</a>
+        <a href="#trade-in" class="text-gray-800 hover:text-primary transition-colors font-medium">Trade-in</a>
+        <a href="#reviews" class="text-gray-800 hover:text-primary transition-colors font-medium">Reviews</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+        <!-- Search Button -->
+        <button id="searchToggle"
+          class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors">
+          <i class="ri-search-line text-xl"></i>
+        </button>
+        <!-- Cart Button -->
+        <button id="cartToggle"
+          class="relative w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors">
+          <i class="ri-shopping-cart-line text-xl"></i>
+          <span id="cartCount"
+            class="absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+        </button>
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuToggle" class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+          <i class="ri-menu-line text-2xl"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Search Bar (Hidden by default) -->
+    <div id="searchBar" class="hidden bg-gray-50 py-3 border-t border-gray-200">
+      <div class="container mx-auto px-4">
+        <div class="relative">
+          <input type="text" placeholder="Search for iPhone models..."
+            class="w-full pl-10 pr-4 py-2 rounded-button border-none bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-primary" />
+          <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center">
+            <i class="ri-search-line text-gray-400"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200">
+      <div class="container mx-auto px-4 py-3">
+        <nav class="flex flex-col space-y-3">
+          <a href="#" class="text-gray-800 py-2 border-b border-gray-100">Home</a>
+          <a href="#shop" class="text-gray-800 py-2 border-b border-gray-100">Shop</a>
+          <a href="#trade-in" class="text-gray-800 py-2 border-b border-gray-100">Trade-in</a>
+          <a href="#reviews" class="text-gray-800 py-2 border-b border-gray-100">Reviews</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!-- Hero Section -->
+  <section class="hero-section pt-28 pb-16 md:pt-32 md:pb-24">
+    <div class="container mx-auto px-4 w-full">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="w-full md:w-1/2 mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+            New iPhones
+          </h1>
+          <p class="text-xl text-gray-700 mb-6">
+            Your new superpower. Now available at SmarTech.
+          </p>
+          <p class="text-gray-600 mb-8 max-w-md">
+            Experience the extraordinary with our premium selection of
+            iPhones. Certified quality, unbeatable prices.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#shop"
+              class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-blue-600 transition-colors !rounded-button whitespace-nowrap">Shop
+              Now</a>
+            <a href="#learn-more"
+              class="bg-white text-primary border border-primary px-6 py-3 rounded-button font-medium hover:bg-gray-50 transition-colors !rounded-button whitespace-nowrap">Learn
+              More</a>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 flex justify-center">
+          <img src="https://i.postimg.cc/4ynmDqrN/92.jpg" alt="iPhone 13"
+            class="max-w-full h-auto object-contain transform hover:scale-105 transition-transform duration-500"
+            style="max-height: 500px;" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Features Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-3">
+          Why Choose SmarTech?
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Experience the difference with our premium service and exceptional
+          products.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-lg shadow-sm text-center">
+          <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-blue-50 rounded-full">
+            <i class="ri-shield-check-line text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Quality Guaranteed</h3>
+          <p class="text-gray-600">
+            Every device is thoroughly inspected and certified to meet our
+            premium standards.
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-sm text-center">
+          <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-blue-50 rounded-full">
+            <i class="ri-exchange-line text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Easy Trade-ins</h3>
+          <p class="text-gray-600">
+            Upgrade your device by trading in your current iPhone for credit
+            toward a new one.
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-sm text-center">
+          <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-blue-50 rounded-full">
+            <i class="ri-customer-service-2-line text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Expert Support</h3>
+          <p class="text-gray-600">
+            Our dedicated team is always ready to assist you with any
+            questions or concerns.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Shop Section -->
+  <section id="shop" class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-3">Shop iPhones</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Browse our collection of premium iPhones from iPhone 11 to iPhone 15 pro max.
+        </p>
+      </div>
+      <!-- Filter Bar -->
+      <div class="bg-white p-4 rounded-lg shadow-sm mb-8">
+  <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+    <div class="flex flex-wrap items-center gap-4">
+      <span class="text-gray-700 font-medium">Filter by:</span>
+      
+      <!-- Model Filter -->
+      <div class="relative">
+        <button id="modelFilterBtn"
+          class="flex items-center justify-between w-full md:w-40 px-4 py-2 bg-white border border-gray-300 rounded-button text-gray-700 hover:border-primary focus:outline-none !rounded-button whitespace-nowrap">
+          <span>Model</span>
+          <i class="ri-arrow-down-s-line ml-2"></i>
+        </button>
+        <div id="modelFilterDropdown"
+          class="hidden absolute z-10 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg">
+          <div class="p-3 max-h-60 overflow-y-auto">
+            <div class="mb-2">
+              <!-- iPhone 15 Series -->
+              <h4 class="font-medium text-gray-800 mb-2">iPhone 15 Series</h4>
+              <label class="custom-checkbox flex items-center mb-2">
+                <span class="ml-7 text-gray-700">iPhone 15 Pro Max</span>
+                <input type="checkbox" class="model-filter" value="iphone-15-pro-max" />
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-checkbox flex items-center mb-2">
+                <span class="ml-7 text-gray-700">iPhone 15 Pro</span>
+                <input type="checkbox" class="model-filter" value="iphone-15-pro" />
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-checkbox flex items-center mb-2">
+                <span class="ml-7 text-gray-700">iPhone 15</span>
+                <input type="checkbox" class="model-filter" value="iphone-15" />
+                <span class="checkmark"></span>
+              </label>
+              
+              <!-- iPhone 14 Series -->
+              <h4 class="font-medium text-gray-800 mb-2 mt-4">iPhone 14 Series</h4>
+              <label class="custom-checkbox flex items-center mb-2">
+                <span class="ml-7 text-gray-700">iPhone 14 Pro Max</span>
+                <input type="checkbox" class="model-filter" value="iphone-14-pro-max" />
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-checkbox flex items-center mb-2">
+                <span class="ml-7 text-gray-700">iPhone 14 Pro</span>
+                <input type="checkbox" class="model-filter" value="iphone-14-pro" />
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-checkbox flex items-center mb-2">
+                <span class="ml-7 text-gray-700">iPhone 14</span>
+                <input type="checkbox" class="model-filter" value="iphone-14" />
+                <span class="checkmark"></span>
+              </label>
+              
+              <!-- iPhone 13 Series -->
+              <h4 class="font-medium text-gray-800 mb-2 mt-4">iPhone 13 Series</h4>
+              <label class="custom-checkbox flex items-center mb-2">
+                <span class="ml-7 text-gray-700">iPhone 13 Pro Max</span>
+                <input type="checkbox" class="model-filter" value="iphone-13-pro-max" />
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-checkbox flex items-center mb-2">
+                <span class="ml-7 text-gray-700">iPhone 13 Pro</span>
+                <input type="checkbox" class="model-filter" value="iphone-13-pro" />
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-checkbox flex items-center mb-2">
+                <span class="ml-7 text-gray-700">iPhone 13</span>
+                <input type="checkbox" class="model-filter" value="iphone-13" />
+                <span class="checkmark"></span>
+              </label>
+              
+              <!-- iPhone 12 Series -->
+              <h4 class="font-medium text-gray-800 mb-2 mt-4">iPhone 12 Series</h4>
+              <label class="custom-checkbox flex items-center mb-2">
+                <span class="ml-7 text-gray-700">iPhone 12 Pro Max</span>
+                <input type="checkbox" class="model-filter" value="iphone-12-pro-max" />
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-checkbox flex items-center mb-2">
+                <span class="ml-7 text-gray-700">iPhone 12 Pro</span>
+                <input type="checkbox" class="model-filter" value="iphone-12-pro" />
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-checkbox flex items-center mb-2">
+                <span class="ml-7 text-gray-700">iPhone 12</span>
+                <input type="checkbox" class="model-filter" value="iphone-12" />
+                <span class="checkmark"></span>
+              </label>
+              
+              <!-- iPhone 11 Series -->
+              <h4 class="font-medium text-gray-800 mb-2 mt-4">iPhone 11 Series</h4>
+              <label class="custom-checkbox flex items-center mb-2">
+                <span class="ml-7 text-gray-700">iPhone 11 Pro Max</span>
+                <input type="checkbox" class="model-filter" value="iphone-11-pro-max" />
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-checkbox flex items-center mb-2">
+                <span class="ml-7 text-gray-700">iPhone 11 Pro</span>
+                <input type="checkbox" class="model-filter" value="iphone-11-pro" />
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-checkbox flex items-center mb-2">
+                <span class="ml-7 text-gray-700">iPhone 11</span>
+                <input type="checkbox" class="model-filter" value="iphone-11" />
+                <span class="checkmark"></span>
+              </label>
+              
+              <!-- Older Models -->
+              <h4 class="font-medium text-gray-800 mb-2 mt-4">Older Models</h4>
+              <label class="custom-checkbox flex items-center mb-2">
+                <span class="ml-7 text-gray-700">iPhone XR</span>
+                <input type="checkbox" class="model-filter" value="iphone-xr" />
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-checkbox flex items-center mb-2">
+                <span class="ml-7 text-gray-700">iPhone X</span>
+                <input type="checkbox" class="model-filter" value="iphone-x" />
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-checkbox flex items-center mb-2">
+                <span class="ml-7 text-gray-700">iPhone 8</span>
+                <input type="checkbox" class="model-filter" value="iphone-8" />
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-checkbox flex items-center mb-2">
+                <span class="ml-7 text-gray-700">iPhone 7</span>
+                <input type="checkbox" class="model-filter" value="iphone-7" />
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-checkbox flex items-center">
+                <span class="ml-7 text-gray-700">iPhone 6</span>
+                <input type="checkbox" class="model-filter" value="iphone-6" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Condition Filter -->
+      <div class="relative">
+        <button id="conditionFilterBtn"
+          class="flex items-center justify-between w-full md:w-40 px-4 py-2 bg-white border border-gray-300 rounded-button text-gray-700 hover:border-primary focus:outline-none !rounded-button whitespace-nowrap">
+          <span>Condition</span>
+          <i class="ri-arrow-down-s-line ml-2"></i>
+        </button>
+        <div id="conditionFilterDropdown"
+          class="hidden absolute z-10 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg">
+          <div class="p-3">
+            <label class="custom-radio flex items-center mb-2">
+              <span class="ml-7 text-gray-700">New</span>
+              <input type="radio" name="condition" class="condition-filter" value="new" />
+              <span class="radio-mark"></span>
+            </label>
+            <label class="custom-radio flex items-center mb-2">
+              <span class="ml-7 text-gray-700">Refurbished</span>
+              <input type="radio" name="condition" class="condition-filter" value="refurbished" />
+              <span class="radio-mark"></span>
+            </label>
+            <label class="custom-radio flex items-center">
+              <span class="ml-7 text-gray-700">Used</span>
+              <input type="radio" name="condition" class="condition-filter" value="used" />
+              <span class="radio-mark"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button id="clearFilters" class="text-primary hover:text-blue-700 font-medium !rounded-button whitespace-nowrap">
+      Clear All Filters
+    </button>
+  </div>
+</div>
+      <!-- Product Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+        <!-- iPhone 15 Pro Max -->
+        <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+          data-model="iphone-15-pro-max" data-condition="new">
+          <div class="relative">
+            <img src="https://i.postimg.cc/DyynT7fh/15-pro-Black-Titinium.jpg" alt="iPhone 15 Pro Max"
+              class="w-full h-64 object-contain object-top p-4" />
+            <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full">New</span>
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">
+              iPhone 15 Pro Max
+            </h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-1">(128)</span>
+            </div>
+            <div class="mb-3">
+              <label class="block text-sm text-gray-600 mb-1">Color</label>
+              <div class="flex space-x-2">
+                <button class="w-6 h-6 rounded-full bg-gray-700 border-2 border-white shadow-sm color-option active"
+                  data-color="Natural Titanium" data-image=""></button>
+                <button class="w-6 h-6 rounded-full bg-blue-700 border-2 border-white shadow-sm color-option"
+                  data-color="Blue Titanium"
+                  data-image="https://i.postimg.cc/Gtv8ndbG/15-pro-Blue-Titanium.jpg"></button>
+                <button class="w-6 h-6 rounded-full bg-white border-2 border-gray-300 shadow-sm color-option"
+                  data-color="White Titanium" data-image="https://i.postimg.cc/133tJpVp/15-White-titaniniuum.jpg"></button>
+                <button class="w-6 h-6 rounded-full bg-black border-2 border-white shadow-sm color-option"
+                  data-color="Black Titanium"
+                  data-image="https://i.postimg.cc/DyynT7fh/15-pro-Black-Titinium.jpg"></button>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="block text-sm text-gray-600 mb-1">Storage</label>
+              <div class="flex space-x-2">
+                <button class="px-3 py-1 text-sm border border-gray-300 rounded-full storage-option"
+                  data-storage="18GB" data-price="17,999">
+                  128GB
+                </button>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-xl font-bold text-gray-900">R17,999</span>
+              <button
+                class="add-to-cart bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                data-id="iphone-16-pro" data-name="iPhone 15 pro Max" data-price="17999." data-color="Titanium Gray"
+                data-storage="128GB"
+                data-image="https://readdy.ai/api/search-image?query=Ultra%2520realistic%2520iPhone%252016%2520Pro%2520in%2520Titanium%2520Gray%2520color%2520on%2520clean%2520white%2520background.%2520Professional%2520product%2520photography%2520with%2520perfect%2520lighting%2520showing%2520the%2520premium%2520design%2520and%2520camera%2520system.%2520The%2520phone%2520is%2520displayed%2520at%2520a%2520slight%2520angle%2520to%2520showcase%2520its%2520slim%2520profile%2520and%2520premium%2520materials.%2520High-end%2520commercial%2520product%2520photography%2520style.&width=400&height=400&seq=iphone16pro&orientation=squarish">
+                <i class="ri-shopping-cart-line"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+          data-model="iphone-15-pro" data-condition="new">
+          <div class="relative">
+            <img
+              src="https://i.postimg.cc/9f1YsPLC/15-proo.jpg"
+              alt="iPhone 16 Pro" class="w-full h-64 object-contain object-top p-4" />
+            <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full">New</span>
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">
+              iPhone 15 Pro
+            </h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-1">(128)</span>
+            </div>
+            <div class="mb-3">
+              <label class="block text-sm text-gray-600 mb-1">Color</label>
+              <div class="flex space-x-2">
+                <button class="w-6 h-6 rounded-full bg-gray-700 border-2 border-white shadow-sm color-option active"
+                  data-color="Natural Titanium"
+                  data-image="https://i.postimg.cc/fLGtPJQM/15-pro-natural-tatnium.jpg"></button>
+                <button class="w-6 h-6 rounded-full bg-blue-700 border-2 border-white shadow-sm color-option"
+                  data-color="Blue Titanium"
+                  data-image="https://i.postimg.cc/Gtv8ndbG/15-pro-Blue-Titanium.jpg"></button>
+                <button class="w-6 h-6 rounded-full bg-white border-2 border-gray-300 shadow-sm color-option"
+                  data-color="White Titanium" data-image="https://i.postimg.cc/133tJpVp/15-White-titaniniuum.jpg"></button>
+                <button class="w-6 h-6 rounded-full bg-black border-2 border-white shadow-sm color-option"
+                  data-color="Black Titanium"
+                  data-image="https://i.postimg.cc/DyynT7fh/15-pro-Black-Titinium.jpg"></button>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="block text-sm text-gray-600 mb-1">Storage</label>
+              <div class="flex space-x-2">
+                <button class="px-3 py-1 text-sm border border-gray-300 rounded-full storage-option active"
+                  data-storage="128GB" data-price="16499">
+                  128GB
+                </button>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-xl font-bold text-gray-900">R16,499</span>
+              <button
+                class="add-to-cart bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                data-id="iphone-16-pro" data-name="iPhone 15 Pro" data-price="16499" data-color="Titanium Gray"
+                data-storage="128GB"
+                data-image="https://readdy.ai/api/search-image?query=Ultra%2520realistic%2520iPhone%252016%2520Pro%2520in%2520Titanium%2520Gray%2520color%2520on%2520clean%2520white%2520background.%2520Professional%2520product%2520photography%2520with%2520perfect%2520lighting%2520showing%2520the%2520premium%2520design%2520and%2520camera%2520system.%2520The%2520phone%2520is%2520displayed%2520at%2520a%2520slight%2520angle%2520to%2520showcase%2520its%2520slim%2520profile%2520and%2520premium%2520materials.%2520High-end%2520commercial%2520product%2520photography%2520style.&width=400&height=400&seq=iphone16pro&orientation=squarish">
+                <i class="ri-shopping-cart-line"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+          data-model="iphone-15" data-condition="new">
+          <div class="relative">
+            <img
+              src="https://i.postimg.cc/RhVM0mBj/15-BLack.jpg"
+              alt="iPhone 16 Pro" class="w-full h-64 object-contain object-top p-4" />
+            <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full">New</span>
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">
+              iPhone 15
+            </h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-1">(128)</span>
+            </div>
+            <div class="mb-3">
+              <label class="block text-sm text-gray-600 mb-1">Color</label>
+              <div class="flex space-x-2">
+                <button class="w-6 h-6 rounded-full bg-black border-2 border-white shadow-sm color-option active"
+                   data-color="Black"
+                   data-image="https://i.postimg.cc/RhVM0mBj/15-BLack.jpg"></button>
+
+                <button class="w-6 h-6 rounded-full bg-blue-700 border-2 border-white shadow-sm color-option"
+                  data-color="Blue"
+                  data-image="https://i.postimg.cc/k5Q9FGM0/15-BLUE.jpg"></button>
+                <button class="w-6 h-6 rounded-full bg-green-500 border-2 border-white shadow-sm color-option"
+                   data-color="Green"
+                   data-image="https://i.postimg.cc/26SJbS1F/15-GREEN.jpg"></button>
+                   <button class="w-6 h-6 rounded-full bg-pink-500 border-2 border-white shadow-sm color-option"
+                     data-color="Pink"
+                     data-image="https://i.postimg.cc/Y0JysNbb/15-Pink.jpg"></button>
+                     <button class="w-6 h-6 rounded-full bg-yellow-400 border-2 border-white shadow-sm color-option"
+                      data-color="Yellow"
+                      data-image="https://i.postimg.cc/nhfPKksL/15-YELLOW.jpg"></button>
+
+
+
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="block text-sm text-gray-600 mb-1">Storage</label>
+              <div class="flex space-x-2">
+                <button class="px-3 py-1 text-sm border border-gray-300 rounded-full storage-option active"
+                  data-storage="128GB" data-price="13999">
+                  128GB
+                </button>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-xl font-bold text-gray-900">R13,999</span>
+              <button
+                class="add-to-cart bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                data-id="iphone-16-pro" data-name="iPhone 15" data-price="13999" data-color="Titanium Gray"
+                data-storage="128GB"
+                data-image="https://readdy.ai/api/search-image?query=Ultra%2520realistic%2520iPhone%252016%2520Pro%2520in%2520Titanium%2520Gray%2520color%2520on%2520clean%2520white%2520background.%2520Professional%2520product%2520photography%2520with%2520perfect%2520lighting%2520showing%2520the%2520premium%2520design%2520and%2520camera%2520system.%2520The%2520phone%2520is%2520displayed%2520at%2520a%2520slight%2520angle%2520to%2520showcase%2520its%2520slim%2520profile%2520and%2520premium%2520materials.%2520High-end%2520commercial%2520product%2520photography%2520style.&width=400&height=400&seq=iphone16pro&orientation=squarish">
+                <i class="ri-shopping-cart-line"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+          data-model="iphone-14-pro-max" data-condition="new">
+          <div class="relative">
+            <img
+              src="https://i.postimg.cc/fLPHVjnD/14-pro-space-Black.jpg"
+              alt="iPhone 16 Pro" class="w-full h-64 object-contain object-top p-4" />
+            <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full">New</span>
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">
+              iPhone 14 pro Max
+            </h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-1">(128)</span>
+            </div>
+            <div class="mb-3">
+              <label class="block text-sm text-gray-600 mb-1">Color</label>
+              <div class="flex space-x-2">
+                <button class="w-6 h-6 rounded-full bg-neutral-900 border-2 border-white shadow-sm color-option"
+        data-color="Space Black"
+        data-image="https://i.postimg.cc/fLPHVjnD/14-pro-space-Black.jpg"></button>
+                <button class="w-6 h-6 rounded-full bg-gray-300 border-2 border-white shadow-sm color-option"
+        data-color="Silver"
+        data-image="https://i.postimg.cc/ThMC9d3s/14-pr-Silver.jpg"></button>
+                <button class="w-6 h-6 rounded-full bg-yellow-500 border-2 border-white shadow-sm color-option"
+        data-color="Gold"
+        data-image="https://i.postimg.cc/BQTdVkfF/14-pro-GOLD.jpg"></button>
+                <button class="w-6 h-6 rounded-full bg-purple-800 border-2 border-white shadow-sm color-option"
+        data-color="Deep Purple"
+        data-image="https://i.postimg.cc/brQF4DWP/14-Pro-DPU.jpg"></button>
+
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="block text-sm text-gray-600 mb-1">Storage</label>
+              <div class="flex space-x-2">
+                <button class="px-3 py-1 text-sm border border-gray-300 rounded-full storage-option active"
+                  data-storage="128GB" data-price="14499">
+                  128GB
+                </button>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-xl font-bold text-gray-900">R14499</span>
+              <button
+                class="add-to-cart bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                data-id="iphone-16-pro" data-name="iPhone 14 Pro Max" data-price="14499" data-color="Titanium Gray"
+                data-storage="128GB"
+                data-image="https://readdy.ai/api/search-image?query=Ultra%2520realistic%2520iPhone%252016%2520Pro%2520in%2520Titanium%2520Gray%2520color%2520on%2520clean%2520white%2520background.%2520Professional%2520product%2520photography%2520with%2520perfect%2520lighting%2520showing%2520the%2520premium%2520design%2520and%2520camera%2520system.%2520The%2520phone%2520is%2520displayed%2520at%2520a%2520slight%2520angle%2520to%2520showcase%2520its%2520slim%2520profile%2520and%2520premium%2520materials.%2520High-end%2520commercial%2520product%2520photography%2520style.&width=400&height=400&seq=iphone16pro&orientation=squarish">
+                <i class="ri-shopping-cart-line"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- iPhone 14 Pro -->
+        <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+          data-model="iphone-14-pro" data-condition="new">
+          <div class="relative">
+            <img
+              src="https://i.postimg.cc/fLPHVjnD/14-pro-space-Black.jpg"
+              alt="iPhone 16 Pro" class="w-full h-64 object-contain object-top p-4" />
+            <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full">New</span>
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">
+              iPhone 14 Pro
+            </h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-1">(128)</span>
+            </div>
+            <div class="mb-3">
+              <label class="block text-sm text-gray-600 mb-1">Color</label>
+              <div class="flex space-x-2">
+                     <button class="w-6 h-6 rounded-full bg-neutral-900 border-2 border-white shadow-sm color-option"
+        data-color="Space Black"
+        data-image="https://i.postimg.cc/fLPHVjnD/14-pro-space-Black.jpg"></button>
+                <button class="w-6 h-6 rounded-full bg-gray-300 border-2 border-white shadow-sm color-option"
+        data-color="Silver"
+        data-image="https://i.postimg.cc/ThMC9d3s/14-pr-Silver.jpg"></button>
+                <button class="w-6 h-6 rounded-full bg-yellow-500 border-2 border-white shadow-sm color-option"
+        data-color="Gold"
+        data-image="https://i.postimg.cc/BQTdVkfF/14-pro-GOLD.jpg"></button>
+                <button class="w-6 h-6 rounded-full bg-purple-800 border-2 border-white shadow-sm color-option"
+        data-color="Deep Purple"
+        data-image="https://i.postimg.cc/brQF4DWP/14-Pro-DPU.jpg"></button>
+
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="block text-sm text-gray-600 mb-1">Storage</label>
+              <div class="flex space-x-2">
+                <button class="px-3 py-1 text-sm border border-gray-300 rounded-full storage-option active"
+                  data-storage="128GB" data-price="13499">
+                  128GB
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-xl font-bold text-gray-900">R13,499</span>
+              <button
+                class="add-to-cart bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                data-id="iphone-16-pro" data-name="iPhone 14 Pro" data-price="13499" data-color="Titanium Gray"
+                data-storage="128GB"
+                data-image="https://readdy.ai/api/search-image?query=Ultra%2520realistic%2520iPhone%252016%2520Pro%2520in%2520Titanium%2520Gray%2520color%2520on%2520clean%2520white%2520background.%2520Professional%2520product%2520photography%2520with%2520perfect%2520lighting%2520showing%2520the%2520premium%2520design%2520and%2520camera%2520system.%2520The%2520phone%2520is%2520displayed%2520at%2520a%2520slight%2520angle%2520to%2520showcase%2520its%2520slim%2520profile%2520and%2520premium%2520materials.%2520High-end%2520commercial%2520product%2520photography%2520style.&width=400&height=400&seq=iphone16pro&orientation=squarish">
+                <i class="ri-shopping-cart-line"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+       <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+          data-model="iphone-14" data-condition="new">
+          <div class="relative">
+            <img
+              src="https://i.postimg.cc/jdMh24z9/14-BLue.jpg"
+              alt="iPhone 16 Pro" class="w-full h-64 object-contain object-top p-4" />
+            <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full">New</span>
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">
+              iPhone 14
+            </h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-1">(128)</span>
+            </div>
+            <div class="mb-3">
+              <label class="block text-sm text-gray-600 mb-1">Color</label>
+              <div class="flex space-x-2">
+              <button class="w-6 h-6 rounded-full bg-blue-600 border-2 border-white shadow-sm color-option"
+        data-color="Blue"
+        data-image="https://i.postimg.cc/jdMh24z9/14-BLue.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-purple-500 border-2 border-white shadow-sm color-option"
+        data-color="Purple"
+        data-image="https://i.postimg.cc/3NMcLCL9/14-Purple.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-slate-900 border-2 border-white shadow-sm color-option"
+        data-color="Midnight"
+        data-image="https://i.postimg.cc/jSWy50qw/14-Midnight.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-yellow-100 border-2 border-white shadow-sm color-option"
+        data-color="Starlight"
+        data-image="https://i.postimg.cc/fR6mS2kH/14-Star-Light.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-red-600 border-2 border-white shadow-sm color-option"
+        data-color="(PRODUCT)RED"
+        data-image="https://i.postimg.cc/zfKWCCgq/14-RED.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-yellow-400 border-2 border-white shadow-sm color-option"
+        data-color="Yellow"
+        data-image="https://i.postimg.cc/DfBGPy84/14-Yellow.jpg"></button>
+
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="block text-sm text-gray-600 mb-1">Storage</label>
+              <div class="flex space-x-2">
+                <button class="px-3 py-1 text-sm border border-gray-300 rounded-full storage-option active"
+                  data-storage="128GB" data-price="10499">
+                  128GB
+                </button>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-xl font-bold text-gray-900">R10,499</span>
+              <button
+                class="add-to-cart bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                data-id="iphone-16-pro" data-name="iPhone 14" data-price="10499" data-color="Titanium Gray"
+                data-storage="128GB"
+                data-image="https://readdy.ai/api/search-image?query=Ultra%2520realistic%2520iPhone%252016%2520Pro%2520in%2520Titanium%2520Gray%2520color%2520on%2520clean%2520white%2520background.%2520Professional%2520product%2520photography%2520with%2520perfect%2520lighting%2520showing%2520the%2520premium%2520design%2520and%2520camera%2520system.%2520The%2520phone%2520is%2520displayed%2520at%2520a%2520slight%2520angle%2520to%2520showcase%2520its%2520slim%2520profile%2520and%2520premium%2520materials.%2520High-end%2520commercial%2520product%2520photography%2520style.&width=400&height=400&seq=iphone16pro&orientation=squarish">
+                <i class="ri-shopping-cart-line"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- iPhone 13 Pro Max -->
+       <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+          data-model="iphone-13-pro-max" data-condition="new">
+          <div class="relative">
+            <img
+              src="https://i.postimg.cc/nc9L9H7J/13-pr-Graphite.jpg"
+              alt="iPhone 16 Pro" class="w-full h-64 object-contain object-top p-4" />
+            <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full">New</span>
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">
+              iPhone 13 Pro Max
+            </h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-1">(128)</span>
+            </div>
+            <div class="mb-3">
+              <label class="block text-sm text-gray-600 mb-1">Color</label>
+              <div class="flex space-x-2">
+                <button class="w-6 h-6 rounded-full bg-gray-800 border-2 border-white shadow-sm color-option"
+        data-color="Graphite"
+        data-image="https://i.postimg.cc/nc9L9H7J/13-pr-Graphite.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-gray-300 border-2 border-white shadow-sm color-option"
+        data-color="Silver"
+        data-image="https://i.postimg.cc/mgxgQ0NF/13-pro-Silver.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-yellow-500 border-2 border-white shadow-sm color-option"
+        data-color="Gold"
+        data-image="https://i.postimg.cc/s2sfL7Lj/13-Pro-Gold.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-blue-300 border-2 border-white shadow-sm color-option"
+        data-color="Sierra Blue"
+        data-image="https://i.postimg.cc/VNgsP5yj/13-pro-Siera-blue.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-emerald-700 border-2 border-white shadow-sm color-option"
+        data-color="Alpine Green"
+        data-image="https://i.postimg.cc/Sstyj5xR/13-pro-alphine-green.jpg"></button>
+
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="block text-sm text-gray-600 mb-1">Storage</label>
+              <div class="flex space-x-2">
+                <button class="px-3 py-1 text-sm border border-gray-300 rounded-full storage-option active"
+                  data-storage="128GB" data-price="12499">
+                  128GB
+                </button>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-xl font-bold text-gray-900">R12,499</span>
+              <button
+                class="add-to-cart bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                data-id="iphone-16-pro" data-name="iPhone 13 Pro Max" data-price="12499" data-color="Titanium Gray"
+                data-storage="128GB"
+                data-image="https://readdy.ai/api/search-image?query=Ultra%2520realistic%2520iPhone%252016%2520Pro%2520in%2520Titanium%2520Gray%2520color%2520on%2520clean%2520white%2520background.%2520Professional%2520product%2520photography%2520with%2520perfect%2520lighting%2520showing%2520the%2520premium%2520design%2520and%2520camera%2520system.%2520The%2520phone%2520is%2520displayed%2520at%2520a%2520slight%2520angle%2520to%2520showcase%2520its%2520slim%2520profile%2520and%2520premium%2520materials.%2520High-end%2520commercial%2520product%2520photography%2520style.&width=400&height=400&seq=iphone16pro&orientation=squarish">
+                <i class="ri-shopping-cart-line"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- iPhone 13 Pro -->
+        <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+          data-model="iphone-13-pro" data-condition="new">
+          <div class="relative">
+            <img
+              src="https://i.postimg.cc/s2sfL7Lj/13-Pro-Gold.jpg"
+              alt="iPhone 16 Pro" class="w-full h-64 object-contain object-top p-4" />
+            <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full">New</span>
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">
+              iPhone 13 Pro
+            </h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-1">(128)</span>
+            </div>
+            <div class="mb-3">
+              <label class="block text-sm text-gray-600 mb-1">Color</label>
+              <div class="flex space-x-2">
+                <button class="w-6 h-6 rounded-full bg-gray-800 border-2 border-white shadow-sm color-option"
+        data-color="Graphite"
+        data-image="https://i.postimg.cc/nc9L9H7J/13-pr-Graphite.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-gray-300 border-2 border-white shadow-sm color-option"
+        data-color="Silver"
+        data-image="https://i.postimg.cc/mgxgQ0NF/13-pro-Silver.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-yellow-500 border-2 border-white shadow-sm color-option"
+        data-color="Gold"
+        data-image="https://i.postimg.cc/s2sfL7Lj/13-Pro-Gold.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-blue-300 border-2 border-white shadow-sm color-option"
+        data-color="Sierra Blue"
+        data-image="https://i.postimg.cc/VNgsP5yj/13-pro-Siera-blue.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-emerald-700 border-2 border-white shadow-sm color-option"
+        data-color="Alpine Green"
+        data-image="https://i.postimg.cc/Sstyj5xR/13-pro-alphine-green.jpg"></button>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="block text-sm text-gray-600 mb-1">Storage</label>
+              <div class="flex space-x-2">
+                <button class="px-3 py-1 text-sm border border-gray-300 rounded-full storage-option active"
+                  data-storage="128GB" data-price="11499">
+                  128GB
+                </button>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-xl font-bold text-gray-900">R11,499</span>
+              <button
+                class="add-to-cart bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                data-id="iphone-16-pro" data-name="iPhone 13 Pro" data-price="11499" data-color="Titanium Gray"
+                data-storage="128GB"
+                data-image="https://readdy.ai/api/search-image?query=Ultra%2520realistic%2520iPhone%252016%2520Pro%2520in%2520Titanium%2520Gray%2520color%2520on%2520clean%2520white%2520background.%2520Professional%2520product%2520photography%2520with%2520perfect%2520lighting%2520showing%2520the%2520premium%2520design%2520and%2520camera%2520system.%2520The%2520phone%2520is%2520displayed%2520at%2520a%2520slight%2520angle%2520to%2520showcase%2520its%2520slim%2520profile%2520and%2520premium%2520materials.%2520High-end%2520commercial%2520product%2520photography%2520style.&width=400&height=400&seq=iphone16pro&orientation=squarish">
+                <i class="ri-shopping-cart-line"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+          data-model="iphone-13" data-condition="new">
+          <div class="relative">
+            <img
+              src="https://i.postimg.cc/PqsKnrbr/13-Green.jpg"
+              alt="iPhone 16 Pro" class="w-full h-64 object-contain object-top p-4" />
+            <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full">New</span>
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">
+              iPhone 13
+            </h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+              <span class="text-gray-500 text-sm ml-1">(128)</span>
+            </div>
+            <div class="mb-3">
+              <label class="block text-sm text-gray-600 mb-1">Color</label>
+              <div class="flex space-x-2">
+            <button class="w-6 h-6 rounded-full bg-yellow-100 border-2 border-white shadow-sm color-option"
+        data-color="Starlight"
+        data-image="https://i.postimg.cc/HkJPChf3/13-Star-LIght.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-slate-900 border-2 border-white shadow-sm color-option"
+        data-color="Midnight"
+        data-image="https://i.postimg.cc/fR6qWvss/13-Midnight.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-blue-600 border-2 border-white shadow-sm color-option"
+        data-color="Blue"
+        data-image="https://i.postimg.cc/0QvtD2rH/13-Blue.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-pink-400 border-2 border-white shadow-sm color-option"
+        data-color="Pink"
+        data-image="https://i.postimg.cc/5y7phBgZ/13-Pink.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-red-600 border-2 border-white shadow-sm color-option"
+        data-color="(PRODUCT)RED"
+        data-image="https://i.postimg.cc/fTPB5vJd/13-red.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-green-600 border-2 border-white shadow-sm color-option"
+        data-color="Green"
+        data-image="https://i.postimg.cc/PqsKnrbr/13-Green.jpg"></button>
+
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="block text-sm text-gray-600 mb-1">Storage</label>
+              <div class="flex space-x-2">
+                <button class="px-3 py-1 text-sm border border-gray-300 rounded-full storage-option active"
+                  data-storage="128GB" data-price="9999">
+                  128GB
+                </button>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-xl font-bold text-gray-900">R9,999</span>
+              <button
+                class="add-to-cart bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                data-id="iphone-16-pro" data-name="iPhone 13" data-price="9999" data-color="Titanium Gray"
+                data-storage="128GB"
+                data-image="https://readdy.ai/api/search-image?query=Ultra%2520realistic%2520iPhone%252016%2520Pro%2520in%2520Titanium%2520Gray%2520color%2520on%2520clean%2520white%2520background.%2520Professional%2520product%2520photography%2520with%2520perfect%2520lighting%2520showing%2520the%2520premium%2520design%2520and%2520camera%2520system.%2520The%2520phone%2520is%2520displayed%2520at%2520a%2520slight%2520angle%2520to%2520showcase%2520its%2520slim%2520profile%2520and%2520premium%2520materials.%2520High-end%2520commercial%2520product%2520photography%2520style.&width=400&height=400&seq=iphone16pro&orientation=squarish">
+                <i class="ri-shopping-cart-line"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+<div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+     data-model="iphone-12-pro-max" data-condition="new">
+
+  <!-- PRODUCT IMAGE -->
+  <div class="relative">
+    <img src="https://i.postimg.cc/7h2f4Dnw/12-pro-pacific-blue.jpg"
+         alt="iPhone 12 Pro Max"
+         class="w-full h-64 object-contain object-top p-4 product-image" />
+    <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full">New</span>
+  </div>
+
+  <!-- PRODUCT DETAILS -->
+  <div class="p-4">
+    <h3 class="text-lg font-semibold text-gray-900 mb-1">iPhone 12 Pro Max</h3>
+
+    <!-- Ratings -->
+    <div class="flex items-center mb-2">
+      <div class="flex text-yellow-400">
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+      </div>
+      <span class="text-gray-500 text-sm ml-1">(128)</span>
+    </div>
+
+    <!-- COLOR OPTIONS -->
+    <div class="mb-3">
+      <label class="block text-sm text-gray-600 mb-1">Color</label>
+      <div class="flex space-x-2">
+        <button class="w-6 h-6 rounded-full bg-gray-800 border-2 border-white shadow-sm color-option active"
+                data-color="Graphite"
+                data-image="https://i.postimg.cc/MHCffXpn/12-Pro-Graphite.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-gray-300 border-2 border-white shadow-sm color-option"
+                data-color="Silver"
+                data-image="https://i.postimg.cc/VkB05fQN/12-pro-max-silver.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-yellow-400 border-2 border-white shadow-sm color-option"
+                data-color="Gold"
+                data-image="https://i.postimg.cc/7LKCMKL8/12-pro-Gold.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-blue-800 border-2 border-white shadow-sm color-option"
+                data-color="Pacific Blue"
+                data-image="https://i.postimg.cc/7h2f4Dnw/12-pro-pacific-blue.jpg"></button>
+      </div>
+    </div>
+
+    <!-- STORAGE OPTIONS -->
+    <div class="mb-3">
+      <label class="block text-sm text-gray-600 mb-1">Storage</label>
+      <div class="flex space-x-2">
+        <button class="px-3 py-1 text-sm border border-gray-300 rounded-full storage-option active"
+                data-storage="128GB" data-price="10499">128GB</button>
+        <button class="px-3 py-1 text-sm border border-gray-300 rounded-full storage-option"
+                data-storage="256GB" data-price="11499">256GB</button>
+      </div>
+    </div>
+
+    <!-- PRICE + ADD TO CART -->
+    <div class="flex justify-between items-center">
+      <span class="text-xl font-bold text-gray-900 price-display">R10,499</span>
+      <button
+        class="add-to-cart bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+        data-id="iphone-12-pro-max"
+        data-name="iPhone 12 Pro Max"
+        data-color=""
+        data-storage=""
+        data-price=""
+        data-image="">
+        <i class="ri-shopping-cart-line"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+      <!-- iPhone 12 Pro -->
+<div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+     data-model="iphone-12-pro" data-condition="new">
+  <div class="relative">
+    <img
+      src="https://i.postimg.cc/VkB05fQN/12-pro-max-silver.jpg"
+      alt="iPhone 12 Pro" class="w-full h-64 object-contain object-top p-4 product-image" />
+    <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full">New</span>
+  </div>
+  <div class="p-4">
+    <h3 class="text-lg font-semibold text-gray-900 mb-1">
+      iPhone 12 Pro
+    </h3>
+    <div class="flex items-center mb-2">
+      <div class="flex text-yellow-400">
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+      </div>
+      <span class="text-gray-500 text-sm ml-1">(128)</span>
+    </div>
+    <div class="mb-3">
+      <label class="block text-sm text-gray-600 mb-1">Color</label>
+      <div class="flex space-x-2">
+        <button class="w-6 h-6 rounded-full bg-gray-800 border-2 border-white shadow-sm color-option"
+                data-color="Graphite"
+                data-image="https://i.postimg.cc/MHCffXpn/12-Pro-Graphite.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-gray-300 border-2 border-white shadow-sm color-option"
+                data-color="Silver"
+                data-image="https://i.postimg.cc/VkB05fQN/12-pro-max-silver.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-yellow-400 border-2 border-white shadow-sm color-option"
+                data-color="Gold"
+                data-image="https://i.postimg.cc/7LKCMKL8/12-pro-Gold.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-blue-800 border-2 border-white shadow-sm color-option"
+                data-color="Pacific Blue"
+                data-image="https://i.postimg.cc/7h2f4Dnw/12-pro-pacific-blue.jpg"></button>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="block text-sm text-gray-600 mb-1">Storage</label>
+      <div class="flex space-x-2">
+        <button class="px-3 py-1 text-sm border border-gray-300 rounded-full storage-option active"
+                data-storage="128GB" data-price="9499">
+          128GB
+        </button>
+        <button class="px-3 py-1 text-sm border border-gray-300 rounded-full storage-option"
+                data-storage="256GB" data-price="9999">
+          256GB
+        </button>
+      </div>
+    </div>
+    <div class="flex justify-between items-center">
+      <span class="text-xl font-bold text-gray-900 price-display">R9,499</span>
+      <button
+        class="add-to-cart bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+        data-id="iphone-12-pro"
+        data-name="iPhone 12 Pro"
+        data-price="9499"
+        data-color="Silver"
+        data-storage="128GB"
+        data-image="https://i.postimg.cc/VkB05fQN/12-pro-max-silver.jpg">
+        <i class="ri-shopping-cart-line"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+       <!-- iPhone 12 -->
+<div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+     data-model="iphone-12" data-condition="new">
+  <div class="relative">
+    <img
+      src="https://i.postimg.cc/dVyKwBXR/12-White.jpg"
+      alt="iPhone 12" class="w-full h-64 object-contain object-top p-4 product-image" />
+    <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full">New</span>
+  </div>
+  <div class="p-4">
+    <h3 class="text-lg font-semibold text-gray-900 mb-1">
+      iPhone 12
+    </h3>
+    <div class="flex items-center mb-2">
+      <div class="flex text-yellow-400">
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+      </div>
+      <span class="text-gray-500 text-sm ml-1">(128)</span>
+    </div>
+    <div class="mb-3">
+      <label class="block text-sm text-gray-600 mb-1">Color</label>
+      <div class="flex space-x-2">
+        <button class="w-6 h-6 rounded-full bg-blue-600 border-2 border-white shadow-sm color-option"
+                data-color="Blue"
+                data-image="https://i.postimg.cc/j5XbBS1G/12-Blue.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-green-600 border-2 border-white shadow-sm color-option"
+                data-color="Green"
+                data-image="https://i.postimg.cc/sxHRD0sm/12-GREEN.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-black border-2 border-white shadow-sm color-option"
+                data-color="Black"
+                data-image="https://i.postimg.cc/m2hs6Ry5/12-BLACK.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-white border-2 border-gray-300 shadow-sm color-option"
+                data-color="White"
+                data-image="https://i.postimg.cc/dVyKwBXR/12-White.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-red-600 border-2 border-white shadow-sm color-option"
+                data-color="(PRODUCT)RED"
+                data-image="https://i.postimg.cc/j2FGrw4k/12-RED.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-purple-500 border-2 border-white shadow-sm color-option"
+                data-color="Purple"
+                data-image="https://i.postimg.cc/tgGGT6QK/12-Purple.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-yellow-400 border-2 border-white shadow-sm color-option"
+                data-color="Yellow"
+                data-image="https://i.postimg.cc/wT1CQ26K/12-Yellow.jpg"></button>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="block text-sm text-gray-600 mb-1">Storage</label>
+      <div class="flex space-x-2">
+        <button class="px-3 py-1 text-sm border border-gray-300 rounded-full storage-option active"
+                data-storage="64GB" data-price="7499">
+          64GB
+        </button>
+        <button class="px-3 py-1 text-sm border border-gray-300 rounded-full storage-option"
+                data-storage="128GB" data-price="7999">
+          128GB
+        </button>
+      </div>
+    </div>
+    <div class="flex justify-between items-center">
+      <span class="text-xl font-bold text-gray-900 price-display">R7,499</span>
+      <button
+        class="add-to-cart bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+        data-id="iphone-12"
+        data-name="iPhone 12"
+        data-price="7499"
+        data-color="Blue"
+        data-storage="64GB"
+        data-image="https://i.postimg.cc/j5XbBS1G/12-Blue.jpg">
+        <i class="ri-shopping-cart-line"></i>
+      </button>
+    </div>
+  </div>
+</div>
+<!-- iPhone 11 Pro Max -->
+<div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+     data-model="iphone-11-pro-max" data-condition="new">
+  <div class="relative">
+    <img
+      src="https://i.postimg.cc/MHmgv3wN/11-pro-black.avif"
+      alt="iPhone 11 Pro Max" class="w-full h-64 object-contain object-top p-4 product-image" />
+    <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full">New</span>
+  </div>
+  <div class="p-4">
+    <h3 class="text-lg font-semibold text-gray-900 mb-1">
+      iPhone 11 Pro Max
+    </h3>
+    <div class="flex items-center mb-2">
+      <div class="flex text-yellow-400">
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+      </div>
+      <span class="text-gray-500 text-sm ml-1">(128)</span>
+    </div>
+    <div class="mb-3">
+      <label class="block text-sm text-gray-600 mb-1">Color</label>
+      <div class="flex space-x-2">
+        <button class="w-6 h-6 rounded-full bg-black border-2 border-white shadow-sm color-option"
+                data-color="Black"
+                data-image="https://i.postimg.cc/MHmgv3wN/11-pro-black.avif"></button>
+
+        <button class="w-6 h-6 rounded-full bg-white border-2 border-gray-300 shadow-sm color-option"
+                data-color="White"
+                data-image="https://i.postimg.cc/VN7qLj2g/11-pro-max.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-yellow-500 border-2 border-white shadow-sm color-option"
+                data-color="Gold"
+                data-image="https://i.postimg.cc/T3d5LKV4/11-pro-Gold.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-green-600 border-2 border-white shadow-sm color-option"
+                data-color="Green"
+                data-image="https://i.postimg.cc/m2GH4XtR/11-pr-green.png"></button>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="block text-sm text-gray-600 mb-1">Storage</label>
+      <div class="flex space-x-2">
+        <button class="px-3 py-1 text-sm border border-gray-300 rounded-full storage-option active"
+                data-storage="64GB" data-price="8499">
+          64GB
+        </button>
+        <button class="px-3 py-1 text-sm border border-gray-300 rounded-full storage-option"
+                data-storage="256GB" data-price="8999">
+          256GB
+        </button>
+      </div>
+    </div>
+    <div class="flex justify-between items-center">
+      <span class="text-xl font-bold text-gray-900 price-display">R8,499</span>
+      <button
+        class="add-to-cart bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+        data-id="iphone-11-pro-max"
+        data-name="iPhone 11 Pro Max"
+        data-price="8499"
+        data-color="Black"
+        data-storage="64GB"
+        data-image="https://i.postimg.cc/MHmgv3wN/11-pro-black.avif">
+        <i class="ri-shopping-cart-line"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- iPhone 11 Pro -->
+<div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+     data-model="iphone-11-pro" data-condition="new">
+  <div class="relative">
+    <img
+      src="https://i.postimg.cc/T3d5LKV4/11-pro-Gold.jpg"
+      alt="iPhone 11 Pro" class="w-full h-64 object-contain object-top p-4 product-image" />
+    <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full">New</span>
+  </div>
+  <div class="p-4">
+    <h3 class="text-lg font-semibold text-gray-900 mb-1">
+      iPhone 11 Pro
+    </h3>
+    <div class="flex items-center mb-2">
+      <div class="flex text-yellow-400">
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+      </div>
+      <span class="text-gray-500 text-sm ml-1">(128)</span>
+    </div>
+    <div class="mb-3">
+      <label class="block text-sm text-gray-600 mb-1">Color</label>
+      <div class="flex space-x-2">
+        <button class="w-6 h-6 rounded-full bg-black border-2 border-white shadow-sm color-option"
+                data-color="Black"
+                data-image="https://i.postimg.cc/MHmgv3wN/11-pro-black.avif"></button>
+
+        <button class="w-6 h-6 rounded-full bg-white border-2 border-gray-300 shadow-sm color-option"
+                data-color="White"
+                data-image="https://i.postimg.cc/VN7qLj2g/11-pro-max.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-yellow-500 border-2 border-white shadow-sm color-option"
+                data-color="Gold"
+                data-image="https://i.postimg.cc/T3d5LKV4/11-pro-Gold.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-green-600 border-2 border-white shadow-sm color-option"
+                data-color="Green"
+                data-image="https://i.postimg.cc/m2GH4XtR/11-pr-green.png"></button>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="block text-sm text-gray-600 mb-1">Storage</label>
+      <div class="flex space-x-2">
+        <button class="px-3 py-1 text-sm border border-gray-300 rounded-full storage-option active"
+                data-storage="64GB" data-price="7500">
+          64GB
+        </button>
+        <button class="px-3 py-1 text-sm border border-gray-300 rounded-full storage-option"
+                data-storage="256GB" data-price="8000">
+          256GB
+        </button>
+      </div>
+    </div>
+    <div class="flex justify-between items-center">
+      <span class="text-xl font-bold text-gray-900 price-display">R7,500</span>
+      <button
+        class="add-to-cart bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+        data-id="iphone-11-pro"
+        data-name="iPhone 11 Pro"
+        data-price="7500"
+        data-color="Black"
+        data-storage="64GB"
+        data-image="https://i.postimg.cc/MHmgv3wN/11-pro-black.avif">
+        <i class="ri-shopping-cart-line"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+       <!-- iPhone 11 -->
+<div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+     data-model="iphone-11" data-condition="new">
+  <div class="relative">
+    <img
+      src="https://i.postimg.cc/9FWQ1vD4/11-White.jpg"
+      alt="iPhone 11" class="w-full h-64 object-contain object-top p-4 product-image" />
+    <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full">New</span>
+  </div>
+  <div class="p-4">
+    <h3 class="text-lg font-semibold text-gray-900 mb-1">
+      iPhone 11
+    </h3>
+    <div class="flex items-center mb-2">
+      <div class="flex text-yellow-400">
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+      </div>
+      <span class="text-gray-500 text-sm ml-1">(128)</span>
+    </div>
+    <div class="mb-3">
+      <label class="block text-sm text-gray-600 mb-1">Color</label>
+      <div class="flex space-x-2">
+        <button class="w-6 h-6 rounded-full bg-purple-500 border-2 border-white shadow-sm color-option"
+                data-color="Purple"
+                data-image="https://i.postimg.cc/m2XBjhxq/Puple-11.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-green-600 border-2 border-white shadow-sm color-option"
+                data-color="Green"
+                data-image="https://i.postimg.cc/kGw9kg22/Green-11.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-yellow-400 border-2 border-white shadow-sm color-option"
+                data-color="Yellow"
+                data-image="https://i.postimg.cc/qRyvZrcK/11-Yellow.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-black border-2 border-white shadow-sm color-option"
+                data-color="Black"
+                data-image="https://i.postimg.cc/Xqg74gz7/11-Black.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-white border-2 border-gray-300 shadow-sm color-option"
+                data-color="White"
+                data-image="https://i.postimg.cc/9FWQ1vD4/11-White.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-red-600 border-2 border-white shadow-sm color-option"
+                data-color="(PRODUCT)RED"
+                data-image="https://i.postimg.cc/N0rs5tzn/11-RED.jpg"></button>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="block text-sm text-gray-600 mb-1">Storage</label>
+      <div class="flex space-x-2">
+        <button class="px-3 py-1 text-sm border border-gray-300 rounded-full storage-option active"
+                data-storage="64GB" data-price="6500">
+          64GB
+        </button>
+        <button class="px-3 py-1 text-sm border border-gray-300 rounded-full storage-option"
+                data-storage="128GB" data-price="7000">
+          128GB
+        </button>
+      </div>
+    </div>
+    <div class="flex justify-between items-center">
+      <span class="text-xl font-bold text-gray-900 price-display">R6,500</span>
+      <button
+        class="add-to-cart bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+        data-id="iphone-11"
+        data-name="iPhone 11"
+        data-price="6500"
+        data-color="Purple"
+        data-storage="64GB"
+        data-image="https://i.postimg.cc/m2XBjhxq/Puple-11.jpg">
+        <i class="ri-shopping-cart-line"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+      <!-- iPhone XR -->
+<div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+     data-model="iphone-xr" data-condition="new">
+  <div class="relative">
+    <img
+      src="https://i.postimg.cc/BZN0Ztv6/XR-BLUE.jpg"
+      alt="iPhone XR" class="w-full h-64 object-contain object-top p-4 product-image" />
+    <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full">New</span>
+  </div>
+  <div class="p-4">
+    <h3 class="text-lg font-semibold text-gray-900 mb-1">
+      iPhone XR
+    </h3>
+    <div class="flex items-center mb-2">
+      <div class="flex text-yellow-400">
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+        <i class="ri-star-fill"></i>
+      </div>
+      <span class="text-gray-500 text-sm ml-1">(128)</span>
+    </div>
+    <div class="mb-3">
+      <label class="block text-sm text-gray-600 mb-1">Color</label>
+      <div class="flex space-x-2">
+        <button class="w-6 h-6 rounded-full bg-black border-2 border-white shadow-sm color-option"
+                data-color="Black"
+                data-image="https://i.postimg.cc/mDyGHgNm/XR-Black.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-white border-2 border-gray-300 shadow-sm color-option"
+                data-color="White"
+                data-image="https://i.postimg.cc/gjcbqbgm/White-XR.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-blue-600 border-2 border-white shadow-sm color-option"
+                data-color="Blue"
+                data-image="https://i.postimg.cc/BZN0Ztv6/XR-BLUE.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-orange-400 border-2 border-white shadow-sm color-option"
+                data-color="Coral"
+                data-image="https://i.postimg.cc/ZKMz3gpz/XR-CCORAL.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-yellow-400 border-2 border-white shadow-sm color-option"
+                data-color="Yellow"
+                data-image="https://i.postimg.cc/9f33g7Lx/XR-Yellow.jpg"></button>
+
+        <button class="w-6 h-6 rounded-full bg-red-600 border-2 border-white shadow-sm color-option"
+                data-color="(PRODUCT)RED"
+                data-image="https://i.postimg.cc/mr7vvgqT/XR-RED.jpg"></button>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="block text-sm text-gray-600 mb-1">Storage</label>
+      <div class="flex space-x-2">
+        <button class="px-3 py-1 text-sm border border-gray-300 rounded-full storage-option active"
+                data-storage="64GB" data-price="5000">
+          64GB
+        </button>
+        <button class="px-3 py-1 text-sm border border-gray-300 rounded-full storage-option"
+                data-storage="128GB" data-price="5500">
+          128GB
+        </button>
+      </div>
+    </div>
+    <div class="flex justify-between items-center">
+      <span class="text-xl font-bold text-gray-900 price-display">R5,000</span>
+      <button
+        class="add-to-cart bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+        data-id="iphone-xr"
+        data-name="iPhone XR"
+        data-price="5000"
+        data-color="Black"
+        data-storage="64GB"
+        data-image="https://i.postimg.cc/mDyGHgNm/XR-Black.jpg">
+        <i class="ri-shopping-cart-line"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+       
+        <!-- Load More Button -->
+        <div class="col-span-1 sm:col-span-2 lg:col-span-3 xl:col-span-4 text-center mt-4">
+          <button id="loadMoreBtn"
+            class="bg-white text-primary border border-primary px-6 py-3 rounded-button font-medium hover:bg-gray-50 transition-colors !rounded-button whitespace-nowrap">
+            Load More Products
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Featured Product Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="w-full md:w-1/2 mb-10 md:mb-0 md:pr-12">
+          <span class="text-primary font-semibold mb-2 block">Featured Product</span>
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">iPhone 13 Pro</h2>
+          <p class="text-gray-600 mb-6">
+            Experience the extraordinary with our premium iPhone 13 Pro.
+            Featuring a stunning Super Retina XDR display with ProMotion, A15
+            Bionic chip, and an advanced camera system.
+          </p>
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start">
+              <div class="w-6 h-6 flex items-center justify-center text-primary mr-3 mt-0.5">
+                <i class="ri-check-line"></i>
+              </div>
+              <p class="text-gray-700">
+                Super Retina XDR display with ProMotion
+              </p>
+            </div>
+            <div class="flex items-start">
+              <div class="w-6 h-6 flex items-center justify-center text-primary mr-3 mt-0.5">
+                <i class="ri-check-line"></i>
+              </div>
+              <p class="text-gray-700">A15 Bionic chip with 5-core GPU</p>
+            </div>
+            <div class="flex items-start">
+              <div class="w-6 h-6 flex items-center justify-center text-primary mr-3 mt-0.5">
+                <i class="ri-check-line"></i>
+              </div>
+              <p class="text-gray-700">
+                Pro camera system with 3x optical zoom
+              </p>
+            </div>
+            <div class="flex items-start">
+              <div class="w-6 h-6 flex items-center justify-center text-primary mr-3 mt-0.5">
+                <i class="ri-check-line"></i>
+              </div>
+              <p class="text-gray-700">Up to 28 hours of video playback</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-4">
+            <button
+              class="add-to-cart bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-blue-600 transition-colors !rounded-button whitespace-nowrap"
+              data-id="iphone-13-pro-featured" data-name="iPhone 13 Pro" data-price="749"
+              data-image="https://readdy.ai/api/search-image?query=Ultra%2520realistic%2520iPhone%252013%2520Pro%2520in%2520Sierra%2520Blue%2520color%2520on%2520clean%2520white%2520background.%2520Professional%2520product%2520photography%2520with%2520perfect%2520lighting%2520showing%2520the%2520premium%2520design%2520and%2520camera%2520system.%2520The%2520phone%2520is%2520displayed%2520at%2520a%2520slight%2520angle%2520to%2520showcase%2520its%2520slim%2520profile.%2520High-end%2520commercial%2520product%2520photography%2520style.&width=400&height=400&seq=iphone13pro&orientation=squarish">
+              Add to Cart
+            </button>
+            <a href="#shop"
+              class="bg-white text-primary border border-primary px-6 py-3 rounded-button font-medium hover:bg-gray-50 transition-colors !rounded-button whitespace-nowrap">Learn
+              More</a>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2">
+          <img
+            src="https://readdy.ai/api/search-image?query=Ultra%2520realistic%2520iPhone%252013%2520Pro%2520in%2520Sierra%2520Blue%2520color%2520floating%2520and%2520slightly%2520angled%2520to%2520show%2520its%2520premium%2520design.%2520The%2520phone%2520displays%2520a%2520clean%2520home%2520screen%2520with%2520minimal%2520icons.%2520The%2520device%2520casts%2520a%2520subtle%2520shadow%2520beneath%2520it.%2520The%2520image%2520has%2520a%2520clean%2C%2520white%2520background%2520with%2520extremely%2520high%2520detail%2520of%2520the%2520phones%2520camera%2520system%2C%2520buttons%2C%2520and%2520edges.%2520Professional%2520product%2520photography%2520style.&width=600&height=600&seq=iphone13pro_featured&orientation=squarish"
+            alt="iPhone 13 Pro" class="max-w-full h-auto object-contain mx-auto" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Trade-in Section -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trade In Your Device</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
+  <style>
+    /* Minimal styles needed for dropdown toggling */
+    .hidden {
+      display: none;
+    }
+    .relative {
+      position: relative;
+    }
+    .absolute {
+      position: absolute;
+    }
+    .z-10 {
+      z-index: 10;
+    }
+    .max-h-60 {
+      max-height: 15rem; /* 60 x 0.25rem */
+    }
+    .overflow-y-auto {
+      overflow-y: auto;
+    }
+    button {
+      cursor: pointer;
+    }
+    /* Highlight selected condition */
+    .selected-condition {
+      border-color: #3b82f6; /* blue-500 */
+      background-color: #dbeafe; /* blue-100 */
+    }
+  </style>
+</head>
+<body>
+  <section id="trade-in" class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-3">Trade in Your Device</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Get credit toward a new iPhone by trading in your current device. It's good for you and the planet.
+        </p>
+      </div>
+      <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+        <div class="flex flex-col md:flex-row">
+          <div class="w-full md:w-1/2 p-8 md:p-12">
+            <h3 class="text-2xl font-semibold text-gray-900 mb-6">Estimate Your Trade-in Value</h3>
+            <div class="space-y-6">
+              <!-- Device Model -->
+              <div>
+                <label class="block text-gray-700 font-medium mb-2">Select Your Device</label>
+                <div class="relative">
+                  <button id="tradeInModelBtn" class="flex items-center justify-between w-full px-4 py-3 bg-white border border-gray-300 rounded-button text-gray-700 hover:border-primary focus:outline-none whitespace-nowrap" type="button">
+                    <span id="selectedTradeInModel" data-value="">Select iPhone Model</span>
+                    <i class="ri-arrow-down-s-line ml-2"></i>
+                  </button>
+                  <div id="tradeInModelDropdown" class="hidden absolute z-10 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto">
+                    <div class="p-3 space-y-2">
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone 15 Pro Max">iPhone 15 Pro Max</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone 15 Pro">iPhone 15 Pro</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone 15">iPhone 15</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone 14 Pro Max">iPhone 14 Pro Max</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone 14 Pro">iPhone 14 Pro</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone 14">iPhone 14</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone 13 Pro Max">iPhone 13 Pro Max</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone 13 Pro">iPhone 13 Pro</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone 13">iPhone 13</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone 12 Pro Max">iPhone 12 Pro Max</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone 12 Pro">iPhone 12 Pro</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone 12">iPhone 12</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone 11 Pro Max">iPhone 11 Pro Max</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone 11 Pro">iPhone 11 Pro</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone 11">iPhone 11</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone XR">iPhone XR</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone XS">iPhone XS</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone X">iPhone X</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone 8 Plus">iPhone 8 Plus</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone 8">iPhone 8</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone 7 Plus">iPhone 7 Plus</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone 7">iPhone 7</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone 6s Plus">iPhone 6s Plus</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone 6s">iPhone 6s</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone 6 Plus">iPhone 6 Plus</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded trade-in-model-option" data-value="iPhone 6">iPhone 6</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Storage Capacity -->
+              <div>
+                <label class="block text-gray-700 font-medium mb-2">Storage Capacity</label>
+                <div class="relative">
+                  <button id="storageCapacityBtn" class="flex items-center justify-between w-full px-4 py-3 bg-white border border-gray-300 rounded-button text-gray-700 hover:border-primary focus:outline-none whitespace-nowrap" type="button">
+                    <span id="selectedStorageCapacity" data-value="">Select Storage</span>
+                    <i class="ri-arrow-down-s-line ml-2"></i>
+                  </button>
+                  <div id="storageCapacityDropdown" class="hidden absolute z-10 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto">
+                    <div class="p-3 space-y-2">
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded storage-option" data-value="64GB">64GB</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded storage-option" data-value="128GB">128GB</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded storage-option" data-value="256GB">256GB</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded storage-option" data-value="512GB">512GB</div>
+                      <div class="cursor-pointer px-3 py-2 hover:bg-gray-100 rounded storage-option" data-value="1TB">1TB</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Condition -->
+              <div>
+                <label class="block text-gray-700 font-medium mb-2">Device Condition</label>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                  <label class="cursor-pointer">
+                    <input type="radio" name="device-condition" value="excellent" class="sr-only" checked />
+                    <div class="border border-gray-300 rounded-button p-4 text-center hover:border-primary transition-colors condition-option selected-condition">
+                      <div class="w-8 h-8 mx-auto mb-2 flex items-center justify-center text-primary">
+                        <i class="ri-emotion-happy-line text-xl"></i>
+                      </div>
+                      <span class="font-medium text-gray-800">Excellent</span>
+                    </div>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="device-condition" value="good" class="sr-only" />
+                    <div class="border border-gray-300 rounded-button p-4 text-center hover:border-primary transition-colors condition-option">
+                      <div class="w-8 h-8 mx-auto mb-2 flex items-center justify-center text-primary">
+                        <i class="ri-emotion-normal-line text-xl"></i>
+                      </div>
+                      <span class="font-medium text-gray-800">Good</span>
+                    </div>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="device-condition" value="fair" class="sr-only" />
+                    <div class="border border-gray-300 rounded-button p-4 text-center hover:border-primary transition-colors condition-option">
+                      <div class="w-8 h-8 mx-auto mb-2 flex items-center justify-center text-primary">
+                        <i class="ri-emotion-unhappy-line text-xl"></i>
+                      </div>
+                      <span class="font-medium text-gray-800">Fair</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <button id="estimateValueBtn" class="w-full bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap" type="button">
+                Estimate Value
+              </button>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 bg-gray-50 p-8 md:p-12 flex items-center">
+            <div id="tradeInResult" class="w-full text-center">
+              <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-blue-50 rounded-full">
+                <i class="ri-recycle-line text-primary text-3xl"></i>
+              </div>
+              <h3 class="text-2xl font-semibold text-gray-900 mb-3">Trade-in Value</h3>
+              <p class="text-gray-600 mb-6" id="tradeInMessage">Select your device details to get an estimated trade-in value.</p>
+              <div id="estimatedValue" class="hidden">
+                <div class="text-4xl font-bold text-primary mb-4" id="tradeInValue">R0</div>
+                <p class="text-gray-600 mb-6">Estimated trade-in value</p>
+                <button class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap" type="button">Proceed with Trade-in</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script src="trade-in.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Mark selected color
+  document.querySelectorAll(".color-option").forEach(button => {
+    button.addEventListener("click", function () {
+      document.querySelectorAll(".color-option").forEach(b => b.classList.remove("selected"));
+      this.classList.add("selected");
+    });
+  });
+
+  // Add to cart button logic (example handler)
+  window.addToCart = function(name, price) {
+    const selectedButton = document.querySelector(".color-option.selected");
+    const image = selectedButton ? selectedButton.dataset.image : 'https://via.placeholder.com/100';
+
+    const cartItems = document.getElementById("cart-items");
+    const cartItem = document.createElement("div");
+    cartItem.className = "cart-item flex items-center gap-4 py-4 border-b";
+    cartItem.innerHTML = `
+      <img src="${image}" alt="${name}" class="w-20 h-20 object-cover rounded-lg" />
+      <div>
+        <h4 class="font-medium">${name}</h4>
+        <p class="text-sm text-gray-500">R${price}</p>
+      </div>
+    `;
+    cartItems.appendChild(cartItem);
+  };
+});
+</script>
+
+</body>
+</html>
+
+
+  <!-- Reviews Section -->
+  <section id="reviews" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-3">
+          Customer Reviews
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          See what our customers are saying about their SmarTech experience.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Review 1 -->
+        <div class="bg-white rounded-lg shadow-sm p-6">
+          <div class="flex items-center mb-4">
+            <div
+              class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-primary font-semibold mr-4">
+              JD
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">James Davidson</h4>
+              <p class="text-gray-500 text-sm">Verified Buyer</p>
+            </div>
+          </div>
+          <div class="flex text-yellow-400 mb-3">
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+          </div>
+          <h5 class="font-semibold text-gray-900 mb-2">
+            Excellent service and product quality
+          </h5>
+          <p class="text-gray-600 mb-4">
+            I was hesitant about buying a refurbished iPhone 13 Pro, but
+            SmarTech exceeded my expectations. The phone looks and works like
+            new, and their customer service was top-notch throughout the
+            process.
+          </p>
+          <div class="text-gray-500 text-sm">June 5, 2025</div>
+        </div>
+        <!-- Review 2 -->
+        <div class="bg-white rounded-lg shadow-sm p-6">
+          <div class="flex items-center mb-4">
+            <div
+              class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-primary font-semibold mr-4">
+              EM
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Emily Martinez</h4>
+              <p class="text-gray-500 text-sm">Verified Buyer</p>
+            </div>
+          </div>
+          <div class="flex text-yellow-400 mb-3">
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-half-fill"></i>
+          </div>
+          <h5 class="font-semibold text-gray-900 mb-2">
+            Great trade-in experience
+          </h5>
+          <p class="text-gray-600 mb-4">
+            The trade-in process was seamless. I received a fair value for my
+            old iPhone 11, and the upgrade to iPhone 15 was smooth. The
+            shipping was fast and the phone arrived in perfect condition.
+          </p>
+          <div class="text-gray-500 text-sm">May 28, 2025</div>
+        </div>
+        <!-- Review 3 -->
+        <div class="bg-white rounded-lg shadow-sm p-6">
+          <div class="flex items-center mb-4">
+            <div
+              class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-primary font-semibold mr-4">
+              RJ
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Robert Johnson</h4>
+              <p class="text-gray-500 text-sm">Verified Buyer</p>
+            </div>
+          </div>
+          <div class="flex text-yellow-400 mb-3">
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-line"></i>
+          </div>
+          <h5 class="font-semibold text-gray-900 mb-2">
+            Impressive selection and prices
+          </h5>
+          <p class="text-gray-600 mb-4">
+            SmarTech offers a wide range of iPhones at competitive prices. I
+            purchased an iPhone 14 Pro and saved a significant amount compared
+            to buying new. The phone was in excellent condition.
+          </p>
+          <div class="text-gray-500 text-sm">May 15, 2025</div>
+        </div>
+      </div>
+      <div class="text-center mt-10">
+        <button
+          class="bg-white text-primary border border-primary px-6 py-3 rounded-button font-medium hover:bg-gray-50 transition-colors !rounded-button whitespace-nowrap">
+          View All Reviews
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- Trust Badges Section -->
+  <section class="py-12 border-t border-gray-200">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">
+          Shop with Confidence
+        </h2>
+        <p class="text-gray-600">
+          Your security and satisfaction are our top priorities.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+            <i class="ri-shield-check-line text-primary text-4xl"></i>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-1">Secure Checkout</h3>
+          <p class="text-gray-600 text-sm">
+            SSL encrypted payment processing
+          </p>
+        </div>
+        <div>
+          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+            <i class="ri-truck-line text-primary text-4xl"></i>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-1">Free Shipping</h3>
+          <p class="text-gray-600 text-sm">On all orders over R500</p>
+        </div>
+        <div>
+          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+            <i class="ri-refresh-line text-primary text-4xl"></i>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-1">30-Day Returns</h3>
+          <p class="text-gray-600 text-sm">Hassle-free return policy</p>
+        </div>
+        <div>
+          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+            <i class="ri-customer-service-2-line text-primary text-4xl"></i>
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-1">24/7 Support</h3>
+          <p class="text-gray-600 text-sm">Expert assistance anytime</p>
+        </div>
+      </div>
+      <div class="flex justify-center items-center mt-10 space-x-6">
+        <div class="w-12 h-12 flex items-center justify-center">
+          <i class="ri-visa-fill text-gray-700 text-3xl"></i>
+        </div>
+        <div class="w-12 h-12 flex items-center justify-center">
+          <i class="ri-mastercard-fill text-gray-700 text-3xl"></i>
+        </div>
+        <div class="w-12 h-12 flex items-center justify-center">
+          <i class="ri-paypal-fill text-gray-700 text-3xl"></i>
+        </div>
+        <div class="w-12 h-12 flex items-center justify-center">
+          <i class="ri-apple-fill text-gray-700 text-3xl"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Newsletter Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-3">Stay Updated</h2>
+        <p class="text-gray-600 mb-8">
+          Subscribe to our newsletter for the latest product updates,
+          exclusive offers, and tech news.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <input type="email" placeholder="Enter your email address"
+            class="flex-grow px-4 py-3 rounded-button border-none focus:outline-none focus:ring-2 focus:ring-primary" />
+          <button
+            class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-blue-600 transition-colors !rounded-button whitespace-nowrap">
+            Subscribe
+          </button>
+        </div>
+        <p class="text-gray-500 text-sm mt-4">
+          By subscribing, you agree to our Privacy Policy and consent to
+          receive updates from SmarTech.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200 pt-12 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div>
+          <a href="#" class="text-2xl font-['Pacifico'] text-primary mb-4 inline-block">SmarTech</a>
+          <p class="text-gray-600 mb-4">
+            Premium iPhones at competitive prices. Quality guaranteed.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-500 hover:text-primary transition-colors">
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-facebook-fill"></i>
+              </div>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-primary transition-colors">
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-twitter-x-fill"></i>
+              </div>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-primary transition-colors">
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-instagram-fill"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-900 mb-4">Quick Links</h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="#" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+            </li>
+            <li>
+              <a href="#shop" class="text-gray-600 hover:text-primary transition-colors">Shop</a>
+            </li>
+            <li>
+              <a href="#trade-in" class="text-gray-600 hover:text-primary transition-colors">Trade-in</a>
+            </li>
+            <li>
+              <a href="#reviews" class="text-gray-600 hover:text-primary transition-colors">Reviews</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-primary transition-colors">About Us</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-900 mb-4">Customer Service</h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="#" class="text-gray-600 hover:text-primary transition-colors">Help Center</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-primary transition-colors">Shipping Policy</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-primary transition-colors">Returns & Refunds</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-primary transition-colors">Warranty Information</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-primary transition-colors">FAQ</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-900 mb-4">Contact Us</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-0.5">
+                <i class="ri-map-pin-line"></i>
+              </div>
+              <span class="text-gray-600">West Walk shop 5</span>
+            </li>
+            <li class="flex items-start">
+              <div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-0.5">
+                <i class="ri-phone-line"></i>
+              </div>
+              <span class="text-gray-600">0822010534</span>
+            </li>
+            <li class="flex items-start">
+              <div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-0.5">
+                <i class="ri-mail-line"></i>
+              </div>
+              <span class="text-gray-600">Mxolisingidia@gmail.com</span>
+            </li>
+            <li class="flex items-start">
+              <div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-0.5">
+                <i class="ri-time-line"></i>
+              </div>
+              <span class="text-gray-600">Mon-Fri: 9AM-6PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-200 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-600 text-sm mb-4 md:mb-0">
+            &copy; 2025 SmarTech. All rights reserved.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-600 hover:text-primary transition-colors text-sm">Privacy Policy</a>
+            <a href="#" class="text-gray-600 hover:text-primary transition-colors text-sm">Terms of Service</a>
+            <a href="#" class="text-gray-600 hover:text-primary transition-colors text-sm">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+<!-- Shopping Cart Modal -->
+<div id="cartModal" class="fixed inset-0 z-50 hidden">
+  <div class="absolute inset-0 bg-black bg-opacity-50" id="cartOverlay"></div>
+  <div class="absolute top-0 right-0 bottom-0 w-full max-w-md bg-white shadow-lg transform transition-transform duration-300 translate-x-full" id="cartDrawer">
+    <div class="flex flex-col h-full">
+      <!-- Cart Header -->
+      <div class="p-4 border-b border-gray-200 flex justify-between items-center">
+        <h3 class="text-xl font-semibold text-gray-900">Your Cart</h3>
+        <button id="closeCart" class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-700">
+          <i class="ri-close-line text-xl"></i>
+        </button>
+      </div>
+      
+      <!-- Cart Items -->
+      <div id="cartItems" class="flex-grow overflow-y-auto p-4">
+        <div id="emptyCart" class="text-center py-12">
+          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-gray-300">
+            <i class="ri-shopping-cart-line text-4xl"></i>
+          </div>
+          <h4 class="text-gray-500 mb-2">Your cart is empty</h4>
+          <p class="text-gray-400 text-sm mb-6">
+            Add items to your cart to proceed to checkout
+          </p>
+          <button id="continueShopping" class="text-primary hover:text-blue-700 font-medium !rounded-button whitespace-nowrap">
+            Continue Shopping
+          </button>
+        </div>
+        <div id="cartItemsList" class="hidden space-y-4"></div>
+      </div>
+      
+      <!-- Cart Footer -->
+      <div id="cartFooter" class="p-4 border-t border-gray-200 hidden">
+        <div class="flex justify-between items-center mb-4">
+          <span class="text-gray-700">Subtotal</span>
+          <span id="cartSubtotal" class="text-xl font-bold text-gray-900">R0.00</span>
+        </div>
+        <button id="proceed-to-checkout" class="checkout-btn">
+          <i class="fas fa-credit-card"></i> Proceed to Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Checkout Page (Hidden Initially) -->
+<div id="checkout-page" class="hidden fixed inset-0 z-50 bg-white p-4 md:p-8 overflow-y-auto">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <!-- Back Button (Mobile) -->
+    <button onclick="returnToCart()" class="lg:hidden flex items-center gap-2 text-blue-600 mb-4">
+      <i class="fas fa-arrow-left"></i>
+      <span>Back to Cart</span>
+    </button>
+
+   <!-- Order Summary Column -->
+<div class="lg:col-span-1 bg-gray-50 p-6 rounded-lg h-fit lg:sticky lg:top-8">
+  <h2 class="text-xl font-bold mb-6 border-b pb-2">Order Summary</h2>
+  
+  <!-- Cart Items List -->
+  <div id="checkout-items" class="space-y-4 max-h-[300px] overflow-y-auto mb-6">
+    <!-- ✅ Leave this empty: JS will insert items here -->
+  </div>
+
+  <!-- Order Totals -->
+  <div class="border-t border-gray-200 pt-4 space-y-3">
+    <div class="flex justify-between">
+      <span class="text-gray-600">Subtotal</span>
+      <span id="checkout-subtotal" class="font-medium">R0.00</span>
+    </div>
+    <div class="flex justify-between">
+      <span class="text-gray-600">Shipping</span>
+      <span class="text-green-600">FREE</span>
+    </div>
+    <div class="flex justify-between text-lg font-bold pt-2">
+      <span>Total</span>
+      <span id="checkout-total" class="text-blue-600">R0.00</span>
+    </div>
+  </div>
+</div>
+
+    <!-- Checkout Form Column -->
+    <div class="lg:col-span-2">
+      <!-- Back Button (Desktop) -->
+      <button onclick="returnToCart()" class="hidden lg:flex items-center gap-2 text-blue-600 mb-6">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back to Cart</span>
+      </button>
+
+      <h1 class="text-2xl font-bold mb-6">Shipping Information</h1>
+      
+      <form id="checkout-form" class="space-y-4 bg-white p-6 rounded-lg border border-gray-100">
+        <!-- Name -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="form-group">
+            <label for="first-name" class="block mb-2 font-medium">First Name*</label>
+            <input type="text" id="first-name" class="w-full p-3 border rounded-lg" required>
+          </div>
+          <div class="form-group">
+            <label for="last-name" class="block mb-2 font-medium">Last Name*</label>
+            <input type="text" id="last-name" class="w-full p-3 border rounded-lg" required>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="form-group">
+            <label for="email" class="block mb-2 font-medium">Email*</label>
+            <input type="email" id="email" class="w-full p-3 border rounded-lg" required>
+          </div>
+          <div class="form-group">
+            <label for="phone" class="block mb-2 font-medium">Phone*</label>
+            <input type="tel" id="phone" class="w-full p-3 border rounded-lg" required>
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="form-group">
+          <label for="address" class="block mb-2 font-medium">Street Address*</label>
+          <input type="text" id="address" class="w-full p-3 border rounded-lg" required>
+        </div>
+
+        <div class="form-group">
+          <label for="address2" class="block mb-2 font-medium">Apt/Suite (Optional)</label>
+          <input type="text" id="address2" class="w-full p-3 border rounded-lg">
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="form-group md:col-span-2">
+            <label for="city" class="block mb-2 font-medium">City*</label>
+            <input type="text" id="city" class="w-full p-3 border rounded-lg" required>
+          </div>
+          <div class="form-group">
+            <label for="zip" class="block mb-2 font-medium">ZIP Code*</label>
+            <input type="text" id="zip" class="w-full p-3 border rounded-lg" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="country" class="block mb-2 font-medium">Country*</label>
+          <select id="country" class="w-full p-3 border rounded-lg appearance-none" required>
+            <option value="">Select Country</option>
+            <option value="US">United States</option>
+            <option value="ZA">South Africa</option>
+            <option value="GB">United Kingdom</option>
+            <option value="CA">Canada</option>
+            <option value="AU">Australia</option>
+          </select>
+        </div>
+
+        <button type="submit" class="checkout-btn w-full mt-6">
+          <i class="fas fa-lock mr-2"></i> Complete Order
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+  <!-- Checkout Modal -->
+ 
+  <!-- Scripts -->
+  <script id="headerInteractions">
+    document.addEventListener("DOMContentLoaded", function () {
+      // Search Toggle
+      const searchToggle = document.getElementById("searchToggle");
+      const searchBar = document.getElementById("searchBar");
+      searchToggle.addEventListener("click", function () {
+        searchBar.classList.toggle("hidden");
+      });
+      // Mobile Menu Toggle
+      const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      mobileMenuToggle.addEventListener("click", function () {
+        mobileMenu.classList.toggle("hidden");
+      });
+    });
+  </script>
+  <script id="filterInteractions">
+    document.addEventListener("DOMContentLoaded", function () {
+      // Model Filter Dropdown
+      const modelFilterBtn = document.getElementById("modelFilterBtn");
+      const modelFilterDropdown = document.getElementById("modelFilterDropdown");
+      modelFilterBtn.addEventListener("click", function () {
+        modelFilterDropdown.classList.toggle("hidden");
+      });
+      // Condition Filter Dropdown
+      const conditionFilterBtn = document.getElementById("conditionFilterBtn");
+      const conditionFilterDropdown = document.getElementById(
+        "conditionFilterDropdown",
+      );
+      conditionFilterBtn.addEventListener("click", function () {
+        conditionFilterDropdown.classList.toggle("hidden");
+      });
+      // Close dropdowns when clicking outside
+      document.addEventListener("click", function (event) {
+        if (
+          !modelFilterBtn.contains(event.target) &&
+          !modelFilterDropdown.contains(event.target)
+        ) {
+          modelFilterDropdown.classList.add("hidden");
+        }
+        if (
+          !conditionFilterBtn.contains(event.target) &&
+          !conditionFilterDropdown.contains(event.target)
+        ) {
+          conditionFilterDropdown.classList.add("hidden");
+        }
+      });
+      // Filter functionality
+      const modelFilters = document.querySelectorAll(".model-filter");
+      const conditionFilters = document.querySelectorAll(".condition-filter");
+      const productCards = document.querySelectorAll(".product-card");
+      const clearFiltersBtn = document.getElementById("clearFilters");
+      function applyFilters() {
+        const selectedModels = Array.from(modelFilters)
+          .filter((filter) => filter.checked)
+          .map((filter) => filter.value);
+        const selectedCondition = Array.from(conditionFilters).find(
+          (filter) => filter.checked,
+        )?.value;
+        productCards.forEach((card) => {
+          const cardModel = card.dataset.model;
+          const cardCondition = card.dataset.condition;
+          const modelMatch =
+            selectedModels.length === 0 || selectedModels.includes(cardModel);
+          const conditionMatch =
+            !selectedCondition || cardCondition === selectedCondition;
+          if (modelMatch && conditionMatch) {
+            card.style.display = "";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      }
+      modelFilters.forEach((filter) => {
+        filter.addEventListener("change", applyFilters);
+      });
+      conditionFilters.forEach((filter) => {
+        filter.addEventListener("change", applyFilters);
+      });
+      clearFiltersBtn.addEventListener("click", function () {
+        modelFilters.forEach((filter) => {
+          filter.checked = false;
+        });
+        conditionFilters.forEach((filter) => {
+          filter.checked = false;
+        });
+        productCards.forEach((card) => {
+          card.style.display = "";
+        });
+      });
+    });
+  </script>
+  <script id="tradeInInteractions">
+    document.addEventListener("DOMContentLoaded", function () {
+      // Trade-in Model Dropdown
+      const tradeInModelBtn = document.getElementById("tradeInModelBtn");
+      const tradeInModelDropdown = document.getElementById("tradeInModelDropdown");
+      const selectedTradeInModel = document.getElementById("selectedTradeInModel");
+      const tradeInModelOptions = document.querySelectorAll(
+        ".trade-in-model-option",
+      );
+      tradeInModelBtn.addEventListener("click", function () {
+        tradeInModelDropdown.classList.toggle("hidden");
+      });
+      tradeInModelOptions.forEach((option) => {
+        option.addEventListener("click", function () {
+          selectedTradeInModel.textContent = this.dataset.value;
+          tradeInModelDropdown.classList.add("hidden");
+        });
+      });
+      // Storage Capacity Dropdown
+      const storageCapacityBtn = document.getElementById("storageCapacityBtn");
+      const storageCapacityDropdown = document.getElementById(
+        "storageCapacityDropdown",
+      );
+      const selectedStorageCapacity = document.getElementById(
+        "selectedStorageCapacity",
+      );
+      const storageOptions = document.querySelectorAll(".storage-option");
+      storageCapacityBtn.addEventListener("click", function () {
+        storageCapacityDropdown.classList.toggle("hidden");
+      });
+      storageOptions.forEach((option) => {
+        option.addEventListener("click", function () {
+          selectedStorageCapacity.textContent = this.dataset.value;
+          storageCapacityDropdown.classList.add("hidden");
+        });
+      });
+      // Close dropdowns when clicking outside
+      document.addEventListener("click", function (event) {
+        if (
+          !tradeInModelBtn.contains(event.target) &&
+          !tradeInModelDropdown.contains(event.target)
+        ) {
+          tradeInModelDropdown.classList.add("hidden");
+        }
+        if (
+          !storageCapacityBtn.contains(event.target) &&
+          !storageCapacityDropdown.contains(event.target)
+        ) {
+          storageCapacityDropdown.classList.add("hidden");
+        }
+      });
+      // Condition Selection
+      const conditionOptions = document.querySelectorAll(".condition-option");
+      conditionOptions.forEach((option) => {
+        option.addEventListener("click", function () {
+          conditionOptions.forEach((opt) => {
+            opt.classList.remove("selected-condition", "border-primary");
+            opt.classList.add("border-gray-300");
+          });
+          this.classList.add("selected-condition", "border-primary");
+          this.classList.remove("border-gray-300");
+        });
+      });
+      // Estimate Value Button
+      const estimateValueBtn = document.getElementById("estimateValueBtn");
+      const estimatedValue = document.getElementById("estimatedValue");
+      estimateValueBtn.addEventListener("click", function () {
+        const model = selectedTradeInModel.textContent;
+        const storage = selectedStorageCapacity.textContent;
+        const condition =
+          document.querySelector(".selected-condition")?.textContent.trim() ||
+          "Excellent";
+        if (model === "Select iPhone Model" || storage === "Select Storage") {
+          alert("Please select both model and storage capacity.");
+          return;
+        }
+        // Calculate estimated value based on model, storage, and condition
+        let baseValue = 0;
+        if (model.includes("16")) {
+          baseValue = 800;
+        } else if (model.includes("15")) {
+          baseValue = 600;
+        } else if (model.includes("14")) {
+          baseValue = 450;
+        } else if (model.includes("13")) {
+          baseValue = 350;
+        } else if (model.includes("12")) {
+          baseValue = 250;
+        } else if (model.includes("11")) {
+          baseValue = 180;
+        } else if (model.includes("X")) {
+          baseValue = 120;
+        } else if (model.includes("8")) {
+          baseValue = 80;
+        } else if (model.includes("7")) {
+          baseValue = 50;
+        } else if (model.includes("6")) {
+          baseValue = 30;
+        }
+        // Adjust for Pro models
+        if (model.includes("Pro")) {
+          baseValue *= 1.3;
+        }
+        // Adjust for storage
+        if (storage === "128GB") {
+          baseValue *= 1.1;
+        } else if (storage === "256GB") {
+          baseValue *= 1.2;
+        } else if (storage === "512GB") {
+          baseValue *= 1.3;
+        } else if (storage === "1TB") {
+          baseValue *= 1.4;
+        }
+        // Adjust for condition
+        if (condition === "Good") {
+          baseValue *= 0.8;
+        } else if (condition === "Fair") {
+          baseValue *= 0.6;
+        }
+        // Round to nearest 5
+        baseValue = Math.round(baseValue / 5) * 5;
+        // Display the estimated value
+        estimatedValue.querySelector(".text-4xl").textContent = "R" + baseValue;
+        estimatedValue.classList.remove("hidden");
+      });
+    });
+  </script>
+  <script id="productInteractions">
+    document.addEventListener("DOMContentLoaded", function () {
+      // Product color and storage selection
+      document.querySelectorAll(".product-card").forEach((card) => {
+        const colorOptions = card.querySelectorAll(".color-option");
+        const storageOptions = card.querySelectorAll(".storage-option");
+        const priceElement = card.querySelector(".text-xl.font-bold");
+        const addToCartBtn = card.querySelector(".add-to-cart");
+        const productImage = card.querySelector("img");
+        colorOptions.forEach((option) => {
+          option.addEventListener("click", function () {
+            colorOptions.forEach((opt) => opt.classList.remove("active"));
+            this.classList.add("active");
+            const color = this.dataset.color;
+            const image = this.dataset.image;
+            addToCartBtn.dataset.color = color;
+            addToCartBtn.dataset.image = image;
+            if (productImage && image) {
+              productImage.src = image;
+            }
+          });
+        });
+        storageOptions.forEach((option) => {
+          option.addEventListener("click", function () {
+            storageOptions.forEach((opt) => opt.classList.remove("active"));
+            this.classList.add("active");
+            const storage = this.dataset.storage;
+            const price = this.dataset.price;
+            priceElement.textContent = "R" + price;
+            addToCartBtn.dataset.storage = storage;
+            addToCartBtn.dataset.price = price;
+          });
+        });
+      });
+    });
+  </script>
+  <script id="cartInteractions">
+    document.addEventListener("DOMContentLoaded", function () {
+      // Cart functionality
+      const cartToggle = document.getElementById("cartToggle");
+      const cartModal = document.getElementById("cartModal");
+      const cartDrawer = document.getElementById("cartDrawer");
+      const cartOverlay = document.getElementById("cartOverlay");
+      const closeCart = document.getElementById("closeCart");
+      const continueShopping = document.getElementById("continueShopping");
+      const cartCount = document.getElementById("cartCount");
+      const emptyCart = document.getElementById("emptyCart");
+      const cartItemsList = document.getElementById("cartItemsList");
+      const cartFooter = document.getElementById("cartFooter");
+      const cartSubtotal = document.getElementById("cartSubtotal");
+      const addToCartButtons = document.querySelectorAll(".add-to-cart");
+      const checkoutBtn = document.getElementById("checkoutBtn");
+      let cart = [];
+
+      // Open cart
+      function openCart() {
+        cartModal.classList.remove("hidden");
+        setTimeout(() => {
+          cartDrawer.classList.remove("translate-x-full");
+        }, 10);
+      }
+
+      // Close cart
+      function closeCartModal() {
+        cartDrawer.classList.add("translate-x-full");
+        setTimeout(() => {
+          cartModal.classList.add("hidden");
+        }, 300);
+      }
+
+      // Update cart UI
+      function updateCartUI() {
+        if (cart.length === 0) {
+          emptyCart.classList.remove("hidden");
+          cartItemsList.classList.add("hidden");
+          cartFooter.classList.add("hidden");
+          cartCount.textContent = "0";
+        } else {
+          emptyCart.classList.add("hidden");
+          cartItemsList.classList.remove("hidden");
+          cartFooter.classList.remove("hidden");
+          cartCount.textContent = cart.reduce(
+            (total, item) => total + item.quantity,
+            0,
+          );
+
+          // Clear cart items
+          cartItemsList.innerHTML = "";
+
+          // Add each item to cart
+          cart.forEach((item) => {
+            const cartItem = document.createElement("div");
+            cartItem.className = "flex items-center border-b border-gray-200 pb-4";
+            cartItem.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-contain mr-4">
+            <div class="flex-grow">
+              <h4 class="text-gray-900 font-medium">${item.name}</h4>
+              <div class="flex items-center mt-2">
+                <button class="decrease-quantity w-8 h-8 flex items-center justify-center border border-gray-300 rounded-l-button" data-id="${item.id}">
+                  <i class="ri-subtract-line"></i>
+                </button>
+                <div class="w-10 h-8 flex items-center justify-center border-t border-b border-gray-300">
+                  ${item.quantity}
+                </div>
+                <button class="increase-quantity w-8 h-8 flex items-center justify-center border border-gray-300 rounded-r-button" data-id="${item.id}">
+                  <i class="ri-add-line"></i>
+                </button>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-gray-900 font-medium">R${(item.price * item.quantity).toFixed(2)}</span>
+              <button class="remove-from-cart block text-gray-500 hover:text-red-500 mt-2 text-sm" data-id="${item.id}">Remove</button>
+            </div>
+          `;
+            cartItemsList.appendChild(cartItem);
+          });
+
+          // Add event listeners to quantity buttons
+          document.querySelectorAll(".decrease-quantity").forEach((button) => {
+            button.addEventListener("click", function () {
+              decreaseQuantity(this.dataset.id);
+            });
+          });
+
+          document.querySelectorAll(".increase-quantity").forEach((button) => {
+            button.addEventListener("click", function () {
+              increaseQuantity(this.dataset.id);
+            });
+          });
+
+          document.querySelectorAll(".remove-from-cart").forEach((button) => {
+            button.addEventListener("click", function () {
+              removeFromCart(this.dataset.id);
+            });
+          });
+
+          // Update subtotal
+          const subtotal = cart.reduce(
+            (total, item) => total + item.price * item.quantity,
+            0,
+          );
+          cartSubtotal.textContent = "R" + subtotal.toFixed(2);
+        }
+      }
+
+      // Add to cart
+      function addToCart(id, name, price, image, color, storage) {
+        const itemId = `${id}-${color}-${storage}`;
+        const existingItem = cart.find((item) => item.id === itemId);
+
+        if (existingItem) {
+          existingItem.quantity += 1;
+        } else {
+          cart.push({
+            id: itemId,
+            name,
+            price,
+            image,
+            color,
+            storage,
+            quantity: 1,
+          });
+        }
+        updateCartUI();
+        openCart();
+      }
+
+      // Decrease quantity
+      function decreaseQuantity(id) {
+        const itemIndex = cart.findIndex((item) => item.id === id);
+        if (itemIndex !== -1) {
+          if (cart[itemIndex].quantity > 1) {
+            cart[itemIndex].quantity -= 1;
+          } else {
+            cart.splice(itemIndex, 1);
+          }
+          updateCartUI();
+        }
+      }
+
+      // Increase quantity
+      function increaseQuantity(id) {
+        const item = cart.find((item) => item.id === id);
+        if (item) {
+          item.quantity += 1;
+          updateCartUI();
+        }
+      }
+
+      // Remove from cart
+      function removeFromCart(id) {
+        const itemIndex = cart.findIndex((item) => item.id === id);
+        if (itemIndex !== -1) {
+          cart.splice(itemIndex, 1);
+          updateCartUI();
+        }
+      }
+
+      // Event listeners
+      cartToggle.addEventListener("click", openCart);
+      closeCart.addEventListener("click", closeCartModal);
+      cartOverlay.addEventListener("click", closeCartModal);
+      continueShopping.addEventListener("click", closeCartModal);
+
+      addToCartButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          const id = this.dataset.id;
+          const name = this.dataset.name;
+          const price = parseFloat(this.dataset.price);
+          const image = this.dataset.image;
+          const color = this.dataset.color || '';
+          const storage = this.dataset.storage || '';
+          addToCart(id, name, price, image, color, storage);
+        });
+      });
+
+      // Initialize cart UI
+      updateCartUI();
+
+      // Checkout button
+      checkoutBtn.addEventListener("click", function () {
+        openCheckout();
+      });
+    });
+  </script>
+  <script id="checkoutInteractions">
+    document.addEventListener("DOMContentLoaded", function () {
+      // Checkout functionality
+      const checkoutModal = document.getElementById("checkoutModal");
+      const checkoutDrawer = document.getElementById("checkoutDrawer");
+      const checkoutOverlay = document.getElementById("checkoutOverlay");
+      const closeCheckout = document.getElementById("closeCheckout");
+      const prevStepBtn = document.getElementById("prevStepBtn");
+      const nextStepBtn = document.getElementById("nextStepBtn");
+      const checkoutSteps = document.querySelectorAll(".checkout-step");
+      const stepIndicators = document.querySelectorAll(".checkout-step-indicator");
+      const stepLines = document.querySelectorAll(".checkout-step-line");
+      const checkoutCartItems = document.getElementById("checkoutCartItems");
+      const checkoutSubtotal = document.getElementById("checkoutSubtotal");
+      const checkoutTax = document.getElementById("checkoutTax");
+      const checkoutTotal = document.getElementById("checkoutTotal");
+      const paymentSubtotal = document.getElementById("paymentSubtotal");
+      const paymentTax = document.getElementById("paymentTax");
+      const paymentTotal = document.getElementById("paymentTotal");
+      const confirmationTotal = document.getElementById("confirmationTotal");
+      const continueShoppingBtn = document.getElementById("continueShoppingBtn");
+      let currentStep = 1;
+      // Open checkout
+      function openCheckout() {
+        // Copy cart items to checkout
+        const cart = Array.from(
+          document.querySelectorAll("#cartItemsList > div"),
+        ).map((item) => {
+          return {
+            image: item.querySelector("img").src,
+            name: item.querySelector("h4").textContent,
+            quantity: parseInt(item.querySelector(".w-10").textContent),
+            price: parseFloat(
+              item
+                .querySelector(".text-gray-900.font-medium")
+                .textContent.replace("R", ""),
+            ),
+          };
+        });
+        checkoutCartItems.innerHTML = "";
+        cart.forEach((item) => {
+          const cartItem = document.createElement("div");
+          cartItem.className =
+            "flex items-center border-b border-gray-200 pb-4 mb-4";
+          cartItem.innerHTML = `
+      <img src="R{item.image}" alt="R{item.name}" class="w-16 h-16 object-contain mr-4">
+      <div class="flex-grow">
+      <h4 class="text-gray-900 font-medium">R{item.name}</h4>
+      <p class="text-gray-500 text-sm">Quantity: R{item.quantity}</p>
+      </div>
+      <div class="text-right">
+      <span class="text-gray-900 font-medium">RR{item.price.toFixed(2)}</span>
+      </div>
+      `;
+          checkoutCartItems.appendChild(cartItem);
+        });
+        // Calculate totals
+        const subtotal = cart.reduce((total, item) => total + item.price, 0);
+        const tax = subtotal * 0.08; // 8% tax
+        const total = subtotal + tax;
+        checkoutSubtotal.textContent = "R" + subtotal.toFixed(2);
+        checkoutTax.textContent = "R" + tax.toFixed(2);
+        checkoutTotal.textContent = "R" + total.toFixed(2);
+        paymentSubtotal.textContent = "R" + subtotal.toFixed(2);
+        paymentTax.textContent = "R" + tax.toFixed(2);
+        paymentTotal.textContent = "R" + total.toFixed(2);
+        confirmationTotal.textContent = "R" + total.toFixed(2);
+        // Show checkout modal
+        checkoutModal.classList.remove("hidden");
+        setTimeout(() => {
+          checkoutDrawer.classList.remove("translate-x-full");
+        }, 10);
+        // Reset to first step
+        goToStep(1);
+      }
+      // Close checkout
+      function closeCheckoutModal() {
+        checkoutDrawer.classList.add("translate-x-full");
+        setTimeout(() => {
+          checkoutModal.classList.add("hidden");
+        }, 300);
+      }
+      // Go to specific step
+      function goToStep(step) {
+        currentStep = step;
+        // Hide all steps
+        checkoutSteps.forEach((stepEl) => {
+          stepEl.classList.add("hidden");
+        });
+        // Show current step
+        document.getElementById(`checkoutStepR{step}`).classList.remove("hidden");
+        // Update step indicators
+        stepIndicators.forEach((indicator) => {
+          const indicatorStep = parseInt(indicator.dataset.step);
+          if (indicatorStep < step) {
+            indicator.classList.remove("bg-gray-200", "text-gray-600");
+            indicator.classList.add("bg-primary", "text-white");
+          } else if (indicatorStep === step) {
+            indicator.classList.remove("bg-gray-200", "text-gray-600");
+            indicator.classList.add("bg-primary", "text-white");
+          } else {
+            indicator.classList.remove("bg-primary", "text-white");
+            indicator.classList.add("bg-gray-200", "text-gray-600");
+          }
+        });
+        // Update step lines
+        stepLines.forEach((line, index) => {
+          if (index < step - 1) {
+            line.classList.remove("bg-gray-200");
+            line.classList.add("bg-primary");
+          } else {
+            line.classList.remove("bg-primary");
+            line.classList.add("bg-gray-200");
+          }
+        });
+        // Update buttons
+        if (step === 1) {
+          prevStepBtn.classList.add("hidden");
+          nextStepBtn.textContent = "Continue to Shipping";
+        } else {
+          prevStepBtn.classList.remove("hidden");
+          if (step === 2) {
+            nextStepBtn.textContent = "Continue to Payment";
+          } else if (step === 3) {
+            nextStepBtn.textContent = "Place Order";
+          } else if (step === 4) {
+            prevStepBtn.classList.add("hidden");
+            nextStepBtn.classList.add("hidden");
+          }
+        }
+      }
+      // Event listeners
+      closeCheckout.addEventListener("click", closeCheckoutModal);
+      checkoutOverlay.addEventListener("click", closeCheckoutModal);
+      prevStepBtn.addEventListener("click", function () {
+        if (currentStep > 1) {
+          goToStep(currentStep - 1);
+        }
+      });
+      nextStepBtn.addEventListener("click", function () {
+        if (currentStep < 4) {
+          goToStep(currentStep + 1);
+        }
+      });
+      continueShoppingBtn.addEventListener("click", function () {
+        closeCheckoutModal();
+        // Clear cart
+        const cartItemsList = document.getElementById("cartItemsList");
+        cartItemsList.innerHTML = "";
+        const emptyCart = document.getElementById("emptyCart");
+        emptyCart.classList.remove("hidden");
+        const cartFooter = document.getElementById("cartFooter");
+        cartFooter.classList.add("hidden");
+        const cartCount = document.getElementById("cartCount");
+        cartCount.textContent = "0";
+      });
+      // Make checkout function available globally
+      window.openCheckout = openCheckout;
+    });
+  </script>
+  <script id="loadMoreInteractions">
+    document.addEventListener("DOMContentLoaded", function () {
+      const loadMoreBtn = document.getElementById("loadMoreBtn");
+      const productGrid = document.querySelector(".grid");
+      const additionalProducts = `
+      <!-- iPhone 12 Pro -->
+      <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow" data-model="iphone-12" data-condition="refurbished">
+      <div class="relative">
+      <img src="https://readdy.ai/api/search-image?query=Ultra%2520realistic%2520iPhone%252012%2520Pro%2520in%2520Pacific%2520Blue%2520color%2520on%2520clean%2520white%2520background.%2520Professional%2520product%2520photography%2520with%2520perfect%2520lighting%2520showing%2520the%2520premium%2520design%2520and%2520camera%2520system.%2520The%2520phone%2520is%2520displayed%2520at%2520a%2520slight%2520angle%2520to%2520showcase%2520its%2520slim%2520profile.%2520High-end%2520commercial%2520product%2520photography%2520style.&width=400&height=400&seq=iphone12pro&orientation=squarish" alt="iPhone 12 Pro" class="w-full h-64 object-contain object-top p-4">
+      <span class="absolute top-3 right-3 bg-blue-500 text-white text-xs px-2 py-1 rounded-full">Refurbished</span>
+      </div>
+      <div class="p-4">
+      <h3 class="text-lg font-semibold text-gray-900 mb-1">iPhone 12 Pro</h3>
+      <div class="flex items-center mb-2">
+      <div class="flex text-yellow-400">
+      <i class="ri-star-fill"></i>
+      <i class="ri-star-fill"></i>
+      <i class="ri-star-fill"></i>
+      <i class="ri-star-fill"></i>
+      <i class="ri-star-line"></i>
+      </div>
+      <span class="text-gray-500 text-sm ml-1">(167)</span>
+      </div>
+      <div class="flex justify-between items-center">
+      <span class="text-xl font-bold text-gray-900">R649</span>
+      <button class="add-to-cart bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors" data-id="iphone-12-pro" data-name="iPhone 12 Pro" data-price="649" data-image="https://readdy.ai/api/search-image?query=Ultra%2520realistic%2520iPhone%252012%2520Pro%2520in%2520Pacific%2520Blue%2520color%2520on%2520clean%2520white%2520background.%2520Professional%2520product%2520photography%2520with%2520perfect%2520lighting%2520showing%2520the%2520premium%2520design%2520and%2520camera%2520system.%2520The%2520phone%2520is%2520displayed%2520at%2520a%2520slight%2520angle%2520to%2520showcase%2520its%2520slim%2520profile.%2520High-end%2520commercial%2520product%2520photography%2520style.&width=400&height=400&seq=iphone12pro&orientation=squarish">
+      <i class="ri-shopping-cart-line"></i>
+      </button>
+      </div>
+      </div>
+      </div>
+      <!-- iPhone 12 -->
+      <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow" data-model="iphone-12" data-condition="used">
+      <div class="relative">
+      <img src="https://readdy.ai/api/search-image?query=Ultra%2520realistic%2520iPhone%252012%2520in%2520Purple%2520color%2520on%2520clean%2520white%2520background.%2520Professional%2520product%2520photography%2520with%2520perfect%2520lighting%2520showing%2520the%2520premium%2520design%2520and%2520camera%2520system.%2520The%2520phone%2520is%2520displayed%2520at%2520a%2520slight%2520angle%2520to%2520showcase%2520its%2520slim%2520profile.%2520High-end%2520commercial%2520product%2520photography%2520style.&width=400&height=400&seq=iphone12&orientation=squarish" alt="iPhone 12" class="w-full h-64 object-contain object-top p-4">
+      <span class="absolute top-3 right-3 bg-yellow-500 text-white text-xs px-2 py-1 rounded-full">Used</span>
+      </div>
+      <div class="p-4">
+      <h3 class="text-lg font-semibold text-gray-900 mb-1">iPhone 12</h3>
+      <div class="flex items-center mb-2">
+      <div class="flex text-yellow-400">
+      <i class="ri-star-fill"></i>
+      <i class="ri-star-fill"></i>
+      <i class="ri-star-fill"></i>
+      <i class="ri-star-fill"></i>
+      <i class="ri-star-line"></i>
+      </div>
+      <span class="text-gray-500 text-sm ml-1">(143)</span>
+      </div>
+      <div class="flex justify-between items-center">
+      <span class="text-xl font-bold text-gray-900">R499</span>
+      <button class="add-to-cart bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors" data-id="iphone-12" data-name="iPhone 12" data-price="499" data-image="https://readdy.ai/api/search-image?query=Ultra%2520realistic%2520iPhone%252012%2520in%2520Purple%2520color%2520on%2520clean%2520white%2520background.%2520Professional%2520product%2520photography%2520with%2520perfect%2520lighting%2520showing%2520the%2520premium%2520design%2520and%2520camera%2520system.%2520The%2520phone%2520is%2520displayed%2520at%2520a%2520slight%2520angle%2520to%2520showcase%2520its%2520slim%2520profile.%2520High-end%2520commercial%2520product%2520photography%2520style.&width=400&height=400&seq=iphone12&orientation=squarish">
+      <i class="ri-shopping-cart-line"></i>
+      </button>
+      </div>
+      </div>
+      </div>
+      <!-- iPhone 11 Pro -->
+      <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow" data-model="iphone-11" data-condition="used">
+      <div class="relative">
+      <img src="https://readdy.ai/api/search-image?query=Ultra%2520realistic%2520iPhone%252011%2520Pro%2520in%2520Midnight%2520Green%2520color%2520on%2520clean%2520white%2520background.%2520Professional%2520product%2520photography%2520with%2520perfect%2520lighting%2520showing%2520the%2520premium%2520design%2520and%2520camera%2520system.%2520The%2520phone%2520is%2520displayed%2520at%2520a%2520slight%2520angle%2520to%2520showcase%2520its%2520slim%2520profile.%2520High-end%2520commercial%2520product%2520photography%2520style.&width=400&height=400&seq=iphone11pro&orientation=squarish" alt="iPhone 11 Pro" class="w-full h-64 object-contain object-top p-4">
+      <span class="absolute top-3 right-3 bg-yellow-500 text-white text-xs px-2 py-1 rounded-full">Used</span>
+      </div>
+      <div class="p-4">
+      <h3 class="text-lg font-semibold text-gray-900 mb-1">iPhone 11 Pro</h3>
+      <div class="flex items-center mb-2">
+      <div class="flex text-yellow-400">
+      <i class="ri-star-fill"></i>
+      <i class="ri-star-fill"></i>
+      <i class="ri-star-fill"></i>
+      <i class="ri-star-fill"></i>
+      <i class="ri-star-half-fill"></i>
+      </div>
+      <span class="text-gray-500 text-sm ml-1">(189)</span>
+      </div>
+      <div class="flex justify-between items-center">
+      <span class="text-xl font-bold text-gray-900">R449</span>
+      <button class="add-to-cart bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors" data-id="iphone-11-pro" data-name="iPhone 11 Pro" data-price="449" data-image="https://readdy.ai/api/search-image?query=Ultra%2520realistic%2520iPhone%252011%2520Pro%2520in%2520Midnight%2520Green%2520color%2520on%2520clean%2520white%2520background.%2520Professional%2520product%2520photography%2520with%2520perfect%2520lighting%2520showing%2520the%2520premium%2520design%2520and%2520camera%2520system.%2520The%2520phone%2520is%2520displayed%2520at%2520a%2520slight%2520angle%2520to%2520showcase%2520its%2520slim%2520profile.%2520High-end%2520commercial%2520product%2520photography%2520style.&width=400&height=400&seq=iphone11pro&orientation=squarish">
+      <i class="ri-shopping-cart-line"></i>
+      </button>
+      </div>
+      </div>
+      </div>
+      <!-- iPhone 11 -->
+      <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow" data-model="iphone-11" data-condition="used">
+      <div class="relative">
+      <img src="https://readdy.ai/api/search-image?query=Ultra%2520realistic%2520iPhone%252011%2520in%2520Purple%2520color%2520on%2520clean%2520white%2520background.%2520Professional%2520product%2520photography%2520with%2520perfect%2520lighting%2520showing%2520the%2520premium%2520design%2520and%2520camera%2520system.%2520The%2520phone%2520is%2520displayed%2520at%2520a%2520slight%2520angle%2520to%2520showcase%2520its%2520slim%2520profile.%2520High-end%2520commercial%2520product%2520photography%2520style.&width=400&height=400&seq=iphone11&orientation=squarish" alt="iPhone 11" class="w-full h-64 object-contain object-top p-4">
+      <span class="absolute top-3 right-3 bg-yellow-500 text-white text-xs px-2 py-1 rounded-full">Used</span>
+      </div>
+      <div class="p-4">
+      <h3 class="text-lg font-semibold text-gray-900 mb-1">iPhone 11</h3>
+      <div class="flex items-center mb-2">
+      <div class="flex text-yellow-400">
+      <i class="ri-star-fill"></i>
+      <i class="ri-star-fill"></i>
+      <i class="ri-star-fill"></i>
+      <i class="ri-star-fill"></i>
+      <i class="ri-star-line"></i>
+      </div>
+      <span class="text-gray-500 text-sm ml-1">(176)</span>
+      </div>
+      <div class="flex justify-between items-center">
+      <span class="text-xl font-bold text-gray-900">R399</span>
+      <button class="add-to-cart bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors" data-id="iphone-11" data-name="iPhone 11" data-price="399" data-image="https://readdy.ai/api/search-image?query=Ultra%2520realistic%2520iPhone%252011%2520in%2520Purple%2520color%2520on%2520clean%2520white%2520background.%2520Professional%2520product%2520photography%2520with%2520perfect%2520lighting%2520showing%2520the%2520premium%2520design%2520and%2520camera%2520system.%2520The%2520phone%2520is%2520displayed%2520at%2520a%2520slight%2520angle%2520to%2520showcase%2520its%2520slim%2520profile.%2520High-end%2520commercial%2520product%2520photography%2520style.&width=400&height=400&seq=iphone11&orientation=squarish">
+      <i class="ri-shopping-cart-line"></i>
+      </button>
+      </div>
+      </div>
+      </div>`;
+      let isProductsLoaded = false;
+      loadMoreBtn.addEventListener("click", function () {
+        if (!isProductsLoaded) {
+          // Remove the "Load More" button temporarily
+          loadMoreBtn.remove();
+          // Create a temporary container
+          const temp = document.createElement("div");
+          temp.innerHTML = additionalProducts;
+          // Add new products before the "Load More" button
+          while (temp.firstChild) {
+            productGrid.appendChild(temp.firstChild);
+          }
+          // Add the "Load More" button back
+          productGrid.appendChild(loadMoreBtn);
+          // Update button state
+          loadMoreBtn.textContent = "No More Products";
+          loadMoreBtn.disabled = true;
+          loadMoreBtn.classList.add("opacity-50", "cursor-not-allowed");
+          // Initialize cart functionality for new products
+          const newAddToCartButtons = document.querySelectorAll(".add-to-cart");
+          newAddToCartButtons.forEach((button) => {
+            button.addEventListener("click", function () {
+              const id = this.dataset.id;
+              const name = this.dataset.name;
+              const price = parseFloat(this.dataset.price);
+              const image = this.dataset.image;
+              window.addToCart(id, name, price, image);
+            });
+          });
+          isProductsLoaded = true;
+        }
+      });
+    });
+  </script>
+  <script>
+  document.getElementById("checkoutBtn").addEventListener("click", () => {
+    fetch("/create-checkout-session", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        items: [
+          {
+            name: "iPhone 15 Pro Max",
+            price: 23999, // in Rands
+            quantity: 1
+          }
+        ]
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.url) {
+        window.location.href = data.url; // Redirect to Stripe checkout
+      } else {
+        alert("Stripe URL not received!");
+      }
+    })
+    .catch((err) => console.error("Checkout failed:", err));
+  });
+</script>
+<script src="js/main.js"></script>
+<script>
+  // Handle Add to Cart
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+      const productCard = button.closest('.product-card');
+      const selectedColor = productCard.querySelector('.color-option.active');
+      const selectedStorage = productCard.querySelector('.storage-option.active');
+
+      const id = productCard.dataset.model;
+      const color = selectedColor?.dataset.color || "Default Color";
+      const image = selectedColor?.dataset.image || "";
+      const storage = selectedStorage?.dataset.storage || "Default Storage";
+      const price = selectedStorage?.dataset.price || "0";
+
+      // ✅ FIX: Clean any previous (###GB) from name before appending
+      const originalName = button.dataset.name;
+      const baseName = originalName.replace(/\s\(\d+GB\)$/, '');
+      button.dataset.name = `${baseName} (${storage})`;
+
+      // ✅ Update button's other data attributes
+      button.dataset.color = color;
+      button.dataset.storage = storage;
+      button.dataset.price = price;
+      button.dataset.image = image;
+
+      // ✅ Log the final cart item (can replace with real cart logic)
+      console.log("🛒 ADD TO CART:", {
+        id,
+        name: button.dataset.name,
+        color,
+        storage,
+        price,
+        image
+      });
+
+      // No alert needed, keeping it silent
+    });
+  });
+
+  // Handle color selection
+  document.querySelectorAll('.color-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const group = btn.closest('.product-card').querySelectorAll('.color-option');
+      group.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Optional: update product image on color change
+      const img = btn.closest('.product-card').querySelector('.product-image');
+      if (img) {
+        img.src = btn.dataset.image;
+      }
+    });
+  });
+
+  // Handle storage selection + live price update
+  document.querySelectorAll('.storage-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const group = btn.closest('.product-card').querySelectorAll('.storage-option');
+      group.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const display = btn.closest('.product-card').querySelector('.price-display');
+      if (display) {
+        display.textContent = "R" + btn.dataset.price;
+      }
+    });
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Dropdown toggles
+    const tradeInModelBtn = document.getElementById("tradeInModelBtn");
+    const tradeInModelDropdown = document.getElementById("tradeInModelDropdown");
+    const storageCapacityBtn = document.getElementById("storageCapacityBtn");
+    const storageCapacityDropdown = document.getElementById("storageCapacityDropdown");
+
+    const selectedTradeInModelSpan = document.getElementById("selectedTradeInModel");
+    const selectedStorageCapacitySpan = document.getElementById("selectedStorageCapacity");
+
+    // Dropdown toggle handlers
+    tradeInModelBtn.addEventListener("click", () => {
+      tradeInModelDropdown.classList.toggle("hidden");
+      storageCapacityDropdown.classList.add("hidden");
+    });
+
+    storageCapacityBtn.addEventListener("click", () => {
+      storageCapacityDropdown.classList.toggle("hidden");
+      tradeInModelDropdown.classList.add("hidden");
+    });
+
+    // Close dropdowns on outside click
+    document.addEventListener("click", (e) => {
+      if (!tradeInModelBtn.contains(e.target) && !tradeInModelDropdown.contains(e.target)) {
+        tradeInModelDropdown.classList.add("hidden");
+      }
+      if (!storageCapacityBtn.contains(e.target) && !storageCapacityDropdown.contains(e.target)) {
+        storageCapacityDropdown.classList.add("hidden");
+      }
+    });
+
+    // Select model option
+    document.querySelectorAll(".trade-in-model-option").forEach(option => {
+      option.addEventListener("click", () => {
+        selectedTradeInModelSpan.textContent = option.textContent.trim();
+        selectedTradeInModelSpan.dataset.value = option.getAttribute("data-value");
+        tradeInModelDropdown.classList.add("hidden");
+      });
+    });
+
+    // Select storage option
+    document.querySelectorAll(".storage-option").forEach(option => {
+      option.addEventListener("click", () => {
+        selectedStorageCapacitySpan.textContent = option.textContent.trim();
+        selectedStorageCapacitySpan.dataset.value = option.getAttribute("data-value");
+        storageCapacityDropdown.classList.add("hidden");
+      });
+    });
+
+    // Condition selection (radio buttons)
+    const conditionRadios = document.querySelectorAll("input[name='device-condition']");
+    const conditionOptions = document.querySelectorAll(".condition-option");
+
+    conditionOptions.forEach((option, index) => {
+      option.addEventListener("click", () => {
+        conditionRadios[index].checked = true;
+        conditionOptions.forEach(o => o.classList.remove("selected-condition"));
+        option.classList.add("selected-condition");
+      });
+    });
+
+    // Trade-in value calculation logic
+    const estimateBtn = document.getElementById("estimateValueBtn");
+    const estimatedValueDiv = document.getElementById("estimatedValue");
+    const tradeInValueDisplay = document.getElementById("tradeInValue");
+    const tradeInMessage = document.getElementById("tradeInMessage");
+
+    // Base values for models (example values in Rand)
+    const baseModelValues = {
+      "iPhone 15 Pro Max": 18000,
+      "iPhone 15 Pro": 16000,
+      "iPhone 15": 14000,
+      "iPhone 14 Pro Max": 12000,
+      "iPhone 14 Pro": 11000,
+      "iPhone 14": 9000,
+      "iPhone 13 Pro Max": 8500,
+      "iPhone 13 Pro": 8000,
+      "iPhone 13": 7500,
+      "iPhone 12 Pro Max": 7000,
+      "iPhone 12 Pro": 6500,
+      "iPhone 12": 6000,
+      "iPhone 11 Pro Max": 5500,
+      "iPhone 11 Pro": 5000,
+      "iPhone 11": 4500,
+      "iPhone XR": 4000,
+      "iPhone XS": 3800,
+      "iPhone X": 3500,
+      "iPhone 8 Plus": 3000,
+      "iPhone 8": 2800,
+      "iPhone 7 Plus": 2500,
+      "iPhone 7": 2300,
+      "iPhone 6s Plus": 1500,
+      "iPhone 6s": 1300,
+      "iPhone 6 Plus": 1200,
+      "iPhone 6": 1000,
+    };
+
+    // Storage multipliers (more storage, higher price)
+    const storageMultipliers = {
+      "64GB": 1,
+      "128GB": 1.1,
+      "256GB": 1.2,
+      "512GB": 1.35,
+      "1TB": 1.5
+    };
+
+    // Condition multipliers
+    const conditionMultipliers = {
+      "excellent": 1,
+      "good": 0.85,
+      "fair": 0.6
+    };
+
+    estimateBtn.addEventListener("click", () => {
+      const model = selectedTradeInModelSpan.dataset.value;
+      const storage = selectedStorageCapacitySpan.dataset.value;
+      const conditionRadio = Array.from(conditionRadios).find(r => r.checked);
+      const condition = conditionRadio ? conditionRadio.value : null;
+
+      // Validation
+      if (!model || !storage || !condition) {
+        tradeInMessage.textContent = "Please select model, storage, and condition to estimate your trade-in value.";
+        estimatedValueDiv.classList.add("hidden");
+        return;
+      }
+
+      tradeInMessage.textContent = "";
+
+      // Calculate value
+      let baseValue = baseModelValues[model];
+      if (!baseValue) {
+        tradeInMessage.textContent = "Sorry, we don't have a trade-in value for the selected model.";
+        estimatedValueDiv.classList.add("hidden");
+        return;
+      }
+
+      let storageMultiplier = storageMultipliers[storage] || 1;
+      let conditionMultiplier = conditionMultipliers[condition] || 1;
+
+      let finalValue = Math.round(baseValue * storageMultiplier * conditionMultiplier);
+
+      // Display result
+      tradeInValueDisplay.textContent = `R${finalValue.toLocaleString()}`;
+      estimatedValueDiv.classList.remove("hidden");
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const tradeInModelBtn = document.getElementById("tradeInModelBtn");
+  const tradeInModelDropdown = document.getElementById("tradeInModelDropdown");
+  const selectedTradeInModel = document.getElementById("selectedTradeInModel");
+
+  const storageCapacityBtn = document.getElementById("storageCapacityBtn");
+  const storageCapacityDropdown = document.getElementById("storageCapacityDropdown");
+  const selectedStorageCapacity = document.getElementById("selectedStorageCapacity");
+
+  const estimateValueBtn = document.getElementById("estimateValueBtn");
+  const tradeInMessage = document.getElementById("tradeInMessage");
+  const estimatedValueContainer = document.getElementById("estimatedValue");
+  const tradeInValue = document.getElementById("tradeInValue");
+
+  // Data - sample trade-in values (in Rands) by model and storage condition multipliers
+  const baseValues = {
+    "iPhone 15 Pro Max": 18000,
+    "iPhone 15 Pro": 16000,
+    "iPhone 15": 14000,
+    "iPhone 14 Pro Max": 12000,
+    "iPhone 14 Pro": 10000,
+    "iPhone 14": 9000,
+    "iPhone 13 Pro Max": 8000,
+    "iPhone 13 Pro": 7000,
+    "iPhone 13": 6000,
+    "iPhone 12 Pro Max": 5000,
+    "iPhone 12 Pro": 4500,
+    "iPhone 12": 4000,
+    "iPhone 11 Pro Max": 3500,
+    "iPhone 11 Pro": 3200,
+    "iPhone 11": 3000,
+    "iPhone XR": 2800,
+    "iPhone XS": 2700,
+    "iPhone X": 2500,
+    "iPhone 8 Plus": 2200,
+    "iPhone 8": 2000,
+    "iPhone 7 Plus": 1800,
+    "iPhone 7": 1500,
+    "iPhone 6s Plus": 1200,
+    "iPhone 6s": 1000,
+    "iPhone 6 Plus": 900,
+    "iPhone 6": 800,
+  };
+
+  const storageMultipliers = {
+    "64GB": 1,
+    "128GB": 1.1,
+    "256GB": 1.2,
+    "512GB": 1.3,
+    "1TB": 1.4,
+  };
+
+  const conditionMultipliers = {
+    excellent: 1,
+    good: 0.85,
+    fair: 0.7,
+  };
+
+  // Toggle dropdown helpers
+  function toggleDropdown(dropdown) {
+    dropdown.classList.toggle("hidden");
+  }
+
+  function closeAllDropdowns() {
+    tradeInModelDropdown.classList.add("hidden");
+    storageCapacityDropdown.classList.add("hidden");
+  }
+
+  // Dropdown toggle events
+  tradeInModelBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleDropdown(tradeInModelDropdown);
+    storageCapacityDropdown.classList.add("hidden");
+  });
+
+  storageCapacityBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleDropdown(storageCapacityDropdown);
+    tradeInModelDropdown.classList.add("hidden");
+  });
+
+  // Click outside closes dropdowns
+  document.addEventListener("click", () => {
+    closeAllDropdowns();
+  });
+
+  // Model option select
+  document.querySelectorAll(".trade-in-model-option").forEach((option) => {
+    option.addEventListener("click", (e) => {
+      e.stopPropagation();
+      selectedTradeInModel.textContent = option.textContent.trim();
+      selectedTradeInModel.dataset.value = option.getAttribute("data-value");
+      tradeInModelDropdown.classList.add("hidden");
+    });
+  });
+
+  // Storage option select
+  document.querySelectorAll(".storage-option").forEach((option) => {
+    option.addEventListener("click", (e) => {
+      e.stopPropagation();
+      selectedStorageCapacity.textContent = option.textContent.trim();
+      selectedStorageCapacity.dataset.value = option.getAttribute("data-value");
+      storageCapacityDropdown.classList.add("hidden");
+    });
+  });
+
+  // Condition selection UI update
+  const conditionOptions = document.querySelectorAll(".condition-option");
+  conditionOptions.forEach((condDiv) => {
+    condDiv.addEventListener("click", () => {
+      conditionOptions.forEach((c) => c.classList.remove("selected-condition"));
+      condDiv.classList.add("selected-condition");
+      // Also check the underlying radio input
+      const radioInput = condDiv.previousElementSibling;
+      if (radioInput && radioInput.type === "radio") {
+        radioInput.checked = true;
+      }
+    });
+  });
+
+  // Estimate value logic
+  estimateValueBtn.addEventListener("click", () => {
+    const model = selectedTradeInModel.dataset.value;
+    const storage = selectedStorageCapacity.dataset.value;
+    const conditionRadio = document.querySelector('input[name="device-condition"]:checked');
+    const condition = conditionRadio ? conditionRadio.value : null;
+
+    if (!model) {
+      alert("Please select your iPhone model.");
+      return;
+    }
+    if (!storage) {
+      alert("Please select storage capacity.");
+      return;
+    }
+    if (!condition) {
+      alert("Please select device condition.");
+      return;
+    }
+
+    // Calculate estimated value
+    let base = baseValues[model] || 0;
+    let storageMultiplier = storageMultipliers[storage] || 1;
+    let conditionMultiplier = conditionMultipliers[condition] || 1;
+
+    let estimated = Math.round(base * storageMultiplier * conditionMultiplier);
+
+    // Show result
+    tradeInValue.textContent = `R${estimated.toLocaleString()}`;
+    tradeInMessage.textContent = "Your estimated trade-in value is:";
+    estimatedValueContainer.classList.remove("hidden");
+  });
+});
+
+</script>
+
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Mark selected color
+  document.querySelectorAll(".color-option").forEach(button => {
+    button.addEventListener("click", function () {
+      document.querySelectorAll(".color-option").forEach(b => b.classList.remove("selected"));
+      this.classList.add("selected");
+    });
+  });
+
+  // Add to cart button logic (example handler)
+  window.addToCart = function(name, price) {
+    const selectedButton = document.querySelector(".color-option.selected");
+    const image = selectedButton ? selectedButton.dataset.image : 'https://via.placeholder.com/100';
+
+    const cartItems = document.getElementById("cart-items");
+    const cartItem = document.createElement("div");
+    cartItem.className = "cart-item flex items-center gap-4 py-4 border-b";
+    cartItem.innerHTML = `
+      <img src="${image}" alt="${name}" class="w-20 h-20 object-cover rounded-lg" />
+      <div>
+        <h4 class="font-medium">${name}</h4>
+        <p class="text-sm text-gray-500">R${price}</p>
+      </div>
+    `;
+    cartItems.appendChild(cartItem);
+  };
+});
+</script>
+
+<script>
+  // OPEN MODAL: Proceed to Checkout button
+  document.getElementById("checkoutBtn").addEventListener("click", function (event) {
+    event.preventDefault(); // prevent anchor jump
+    const modal = document.getElementById("checkoutModal");
+    const drawer = document.getElementById("checkoutDrawer");
+
+    modal.classList.remove("hidden"); // show overlay
+    drawer.classList.remove("translate-x-full"); // slide drawer in
+  });
+
+  // CLOSE MODAL: X button
+  document.getElementById("closeCheckout").addEventListener("click", function () {
+    const modal = document.getElementById("checkoutModal");
+    const drawer = document.getElementById("checkoutDrawer");
+
+    drawer.classList.add("translate-x-full"); // slide drawer out
+    setTimeout(() => {
+      modal.classList.add("hidden"); // hide overlay after animation
+    }, 300); // match transition duration
+  });
+
+  // CLOSE MODAL: clicking the dark background
+  document.getElementById("checkoutOverlay").addEventListener("click", function () {
+    const modal = document.getElementById("checkoutModal");
+    const drawer = document.getElementById("checkoutDrawer");
+
+    drawer.classList.add("translate-x-full");
+    setTimeout(() => {
+      modal.classList.add("hidden");
+    }, 300);
+  });
+
+// Proceed to Checkout Button
+document.getElementById('proceed-to-checkout').addEventListener('click', function(e) {
+  e.preventDefault();
+  
+  // Check if cart is empty
+  if (cart.length === 0) {
+    alert('Your cart is empty!');
+    return;
+  }
+  
+  // Hide cart and show checkout form
+  document.getElementById('cart-page').style.display = 'none';
+  document.getElementById('checkout-page').style.display = 'block';
+  
+  // Optional: Scroll to top
+  window.scrollTo(0, 0);
+});
+
+// Form submission
+document.getElementById('checkout-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Process order here
+  alert('Order placed successfully!');
+  
+  // Optional: Clear cart and redirect
+if (!localStorage.getItem('cart')) {
+  localStorage.setItem('cart', JSON.stringify([]));
+}
+
+});
+
+
+</script>
+
+<script>
+  // Cart and Checkout Flow
+document.addEventListener('DOMContentLoaded', function() {
+  // Cart Elements
+  const cartModal = document.getElementById('cartModal');
+  const cartDrawer = document.getElementById('cartDrawer');
+  const closeCart = document.getElementById('closeCart');
+  const cartOverlay = document.getElementById('cartOverlay');
+  const proceedToCheckout = document.getElementById('proceed-to-checkout');
+  const checkoutPage = document.getElementById('checkout-page');
+  
+  // Toggle Cart Modal
+  function toggleCart(show) {
+    if (show) {
+      cartModal.classList.remove('hidden');
+      setTimeout(() => {
+        cartModal.classList.add('show');
+      }, 10);
+    } else {
+      cartModal.classList.remove('show');
+      setTimeout(() => {
+        cartModal.classList.add('hidden');
+      }, 300);
+    }
+  }
+  
+  // Open Cart
+  document.querySelectorAll('.open-cart').forEach(btn => {
+    btn.addEventListener('click', () => toggleCart(true));
+  });
+  
+  // Close Cart
+  [closeCart, cartOverlay].forEach(el => {
+    el.addEventListener('click', () => toggleCart(false));
+  });
+  
+  // Proceed to Checkout
+  proceedToCheckout.addEventListener('click', function(e) {
+    e.preventDefault();
+    toggleCart(false);
+    setTimeout(() => {
+      checkoutPage.classList.add('show');
+      checkoutPage.classList.remove('hidden');
+    }, 300);
+  });
+  
+  // Return to Cart
+  window.returnToCart = function() {
+    checkoutPage.classList.remove('show');
+    checkoutPage.classList.add('hidden');
+    setTimeout(() => {
+      toggleCart(true);
+    }, 300);
+  };
+  
+  // Form Submission
+  document.getElementById('checkout-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Process order here
+    alert('Order placed successfully!');
+    // Clear cart and redirect
+    localStorage.removeItem('cart');
+    window.location.href = '/thank-you.html';
+  });
+});
+
+// Show Checkout Page
+function showCheckoutPage() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+  if (cart.length === 0) {
+    alert("Your cart is empty!");
+    return;
+  }
+
+  renderCheckoutSummary();
+  document.getElementById('checkout-page').classList.remove('hidden');
+  document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+// Render Order Summary
+function renderCheckoutSummary() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const itemsContainer = document.getElementById('checkout-items');
+  const subtotalElement = document.getElementById('checkout-subtotal');
+  const totalElement = document.getElementById('checkout-total');
+
+  itemsContainer.innerHTML = '';
+
+  if (cart.length === 0) {
+    itemsContainer.innerHTML = '<p class="text-gray-500 py-4">Your cart is empty</p>';
+    return;
+  }
+
+  cart.forEach(item => {
+    const itemElement = document.createElement('div');
+    itemElement.className = 'flex justify-between items-start pb-4 border-b border-gray-100';
+    itemElement.innerHTML = `
+      <div class="flex gap-3">
+        <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded">
+        <div>
+          <h4 class="font-medium">${item.name}</h4>
+          <p class="text-sm text-gray-600">Qty: ${item.quantity}</p>
+        </div>
+      </div>
+      <span class="font-medium">R${(item.price * item.quantity).toFixed(2)}</span>
+    `;
+    itemsContainer.appendChild(itemElement);
+  });
+
+  const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  subtotalElement.textContent = `R${subtotal.toFixed(2)}`;
+  totalElement.textContent = `R${subtotal.toFixed(2)}`;
+}
+
+// Return to Cart
+function returnToCart() {
+  document.getElementById('checkout-page').classList.add('hidden');
+  document.body.style.overflow = 'auto';
+}
+
+// Form Submission
+document.getElementById('checkout-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const formData = {
+    firstName: document.getElementById('first-name').value,
+    lastName: document.getElementById('last-name').value,
+    email: document.getElementById('email').value,
+    phone: document.getElementById('phone').value,
+    address: document.getElementById('address').value,
+    city: document.getElementById('city').value,
+    zip: document.getElementById('zip').value,
+    country: document.getElementById('country').value
+  };
+
+  console.log('Order submitted:', formData);
+  alert(`Order confirmed for ${formData.firstName} ${formData.lastName}`);
+  
+  localStorage.removeItem('cart');
+  window.location.href = '/thank-you.html';
+});
+
+// Connect to your "Proceed to Checkout" button
+document.getElementById('proceed-to-checkout').addEventListener('click', showCheckoutPage);
+// ===== CART MANAGEMENT =====
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// ===== SHOW CHECKOUT PAGE =====
+function showCheckoutPage() {
+  // Debug: Log current cart state
+  console.log("Current cart:", cart);
+  
+  if (!cart || cart.length === 0) {
+    alert("🛒 Your cart is empty! Add some items first.");
+    return;
+  }
+
+  renderCheckoutSummary();
+  document.getElementById('checkout-page').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+// ===== RENDER ORDER SUMMARY =====
+function renderCheckoutSummary() {
+  const itemsContainer = document.getElementById('checkout-items');
+  const subtotalElement = document.getElementById('checkout-subtotal');
+  const totalElement = document.getElementById('checkout-total');
+
+  // Clear previous items
+  itemsContainer.innerHTML = '';
+
+  // Debug: Verify cart contents
+  console.log("Rendering cart with", cart.length, "items");
+
+  cart.forEach(item => {
+    const itemElement = document.createElement('div');
+    itemElement.className = 'cart-item';
+    itemElement.innerHTML = `
+      <div class="flex justify-between items-start pb-4 border-b border-gray-100">
+        <div class="flex gap-3">
+          <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded">
+          <div>
+            <h4 class="font-medium">${item.name}</h4>
+            <p class="text-sm text-gray-600">Qty: ${item.quantity}</p>
+          </div>
+        </div>
+        <span class="font-medium">R${(item.price * item.quantity).toFixed(2)}</span>
+      </div>
+    `;
+    itemsContainer.appendChild(itemElement);
+  });
+
+  const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+  subtotalElement.textContent = `R${subtotal.toFixed(2)}`;
+  totalElement.textContent = `R${subtotal.toFixed(2)}`;
+  
+  // Show/hide empty state
+  document.getElementById('cartFooter').classList.toggle('hidden', cart.length === 0);
+  document.getElementById('emptyCart').classList.toggle('hidden', cart.length > 0);
+  document.getElementById('cartItemsList').classList.toggle('hidden', cart.length === 0);
+}
+
+// ===== INITIALIZE CART =====
+function initCart() {
+  // Load cart from localStorage
+  cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+  // Update UI
+  updateCartCount();
+  renderCheckoutSummary();
+  
+  // Debug: Verify initialization
+  console.log("Cart initialized with", cart.length, "items");
+}
+
+// Call this when page loads
+document.addEventListener('DOMContentLoaded', initCart);
+
+</script>
+<script>
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // Show the checkout page and fill summary
+  document.getElementById("checkoutBtn")?.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    if (cart.length === 0) {
+      alert("Cart is empty!");
+      return;
+    }
+
+    // Show checkout page
+    document.getElementById("checkout-page").classList.remove("hidden");
+    renderCheckoutSummary();
+  });
+
+  function renderCheckoutSummary() {
+    const itemContainer = document.getElementById("checkout-items");
+    const subtotalEl = document.getElementById("checkout-subtotal");
+    const totalEl = document.getElementById("checkout-total");
+
+    itemContainer.innerHTML = ""; // Clear old data
+
+    let subtotal = 0;
+
+    cart.forEach(item => {
+      const itemTotal = item.price * item.quantity;
+      subtotal += itemTotal;
+
+      const itemDiv = document.createElement("div");
+      itemDiv.className = "flex justify-between items-center border-b pb-2";
+
+      itemDiv.innerHTML = `
+        <div>
+          <h4 class="font-medium text-gray-800">${item.name}</h4>
+          <p class="text-sm text-gray-500">Qty: ${item.quantity}</p>
+        </div>
+        <div class="text-right text-gray-900 font-bold">R${itemTotal.toFixed(2)}</div>
+      `;
+
+      itemContainer.appendChild(itemDiv);
+    });
+
+    subtotalEl.textContent = `R${subtotal.toFixed(2)}`;
+    totalEl.textContent = `R${subtotal.toFixed(2)}`;
+  }
+
+  // Optional: hide checkout page and go back to cart
+  function returnToCart() {
+    document.getElementById("checkout-page").classList.add("hidden");
+  }
+</script>
+
+<script>
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  document.getElementById("checkoutBtn")?.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    if (cart.length === 0) {
+      alert("Cart is empty!");
+      return;
+    }
+
+    document.getElementById("checkout-page").classList.remove("hidden");
+    renderCheckoutSummary();
+  });
+
+  function renderCheckoutSummary() {
+    const itemContainer = document.getElementById("checkout-items");
+    const subtotalEl = document.getElementById("checkout-subtotal");
+    const totalEl = document.getElementById("checkout-total");
+
+    itemContainer.innerHTML = ""; // clear previous
+
+    let subtotal = 0;
+
+    cart.forEach(item => {
+      const itemTotal = item.price * item.quantity;
+      subtotal += itemTotal;
+
+      const itemHTML = `
+        <div class="flex justify-between items-center border-b pb-2">
+          <div>
+            <h4 class="font-medium text-gray-800">${item.name}</h4>
+            <p class="text-sm text-gray-500">Qty: ${item.quantity}</p>
+          </div>
+          <div class="text-right text-gray-900 font-bold">R${itemTotal.toFixed(2)}</div>
+        </div>
+      `;
+
+      itemContainer.innerHTML += itemHTML;
+    });
+
+    subtotalEl.textContent = `R${subtotal.toFixed(2)}`;
+    totalEl.textContent = `R${subtotal.toFixed(2)}`;
+  }
+</script>
+
+<script id="checkoutInteractions">
+  document.addEventListener("DOMContentLoaded", function () {
+    // ... (keep all your existing code until the openCheckout function) ...
+
+    // Open checkout - UPDATED VERSION (matches your cart HTML)
+    function openCheckout() {
+      // 1. Get REAL cart data from localStorage
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // 2. Clear old items
+      checkoutCartItems.innerHTML = "";
+
+      // 3. Add REAL cart items to order summary (same layout as your cart)
+      cart.forEach((item) => {
+        const cartItem = document.createElement("div");
+        cartItem.className = "flex items-center border-b border-gray-200 pb-4 mb-4"; // Same as cart
+        cartItem.innerHTML = `
+          <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-contain mr-4">
+          <div class="flex-grow">
+            <h4 class="text-gray-900 font-medium">${item.name}</h4>
+            <p class="text-gray-500 text-sm">Quantity: ${item.quantity}</p>
+          </div>
+          <div class="text-right">
+            <span class="text-gray-900 font-medium">R${(item.price * item.quantity).toFixed(2)}</span>
+          </div>
+        `;
+        checkoutCartItems.appendChild(cartItem);
+      });
+
+      // 4. Calculate REAL totals (subtotal + 15% tax)
+      const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+      const tax = subtotal * 0.15;
+      const total = subtotal + tax;
+
+      // 5. Update displayed totals (all sections)
+      checkoutSubtotal.textContent = "R" + subtotal.toFixed(2);
+      checkoutTax.textContent = "R" + tax.toFixed(2);
+      checkoutTotal.textContent = "R" + total.toFixed(2);
+      paymentSubtotal.textContent = "R" + subtotal.toFixed(2);
+      paymentTax.textContent = "R" + tax.toFixed(2);
+      paymentTotal.textContent = "R" + total.toFixed(2);
+      confirmationTotal.textContent = "R" + total.toFixed(2);
+
+      // Show checkout modal (keep your existing animation)
+      checkoutModal.classList.remove("hidden");
+      setTimeout(() => {
+        checkoutDrawer.classList.remove("translate-x-full");
+      }, 10);
+      goToStep(1); // Start at step 1
+    }
+
+    // ... (keep all your remaining original code) ...
+  });
+</script>
+
+
+
+<script>
+  function showCheckoutPage() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (cart.length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
+
+    document.getElementById("checkout-page")?.classList.remove("hidden");
+    document.body.style.overflow = 'hidden';
+
+    renderCheckoutSummary();
+  }
+
+  function renderCheckoutSummary() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const itemsContainer = document.getElementById('checkout-items');
+    const subtotalElement = document.getElementById('checkout-subtotal');
+    const totalElement = document.getElementById('checkout-total');
+
+    if (!itemsContainer || !subtotalElement || !totalElement) {
+      console.error("Checkout DOM elements not found!");
+      return;
+    }
+
+    itemsContainer.innerHTML = '';
+
+    if (cart.length === 0) {
+      itemsContainer.innerHTML = '<p class="text-gray-500 py-4">Your cart is empty</p>';
+      subtotalElement.textContent = 'R0.00';
+      totalElement.textContent = 'R0.00';
+      return;
+    }
+
+    let subtotal = 0;
+
+    cart.forEach(item => {
+      const itemElement = document.createElement('div');
+      const itemTotal = item.price * item.quantity;
+      subtotal += itemTotal;
+
+      itemElement.className = 'flex justify-between items-start pb-4 border-b border-gray-100';
+      itemElement.innerHTML = `
+        <div class="flex gap-3">
+          <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded">
+          <div>
+            <h4 class="font-medium">${item.name}</h4>
+            <p class="text-sm text-gray-600">Qty: ${item.quantity}</p>
+          </div>
+        </div>
+        <span class="font-medium">R${itemTotal.toFixed(2)}</span>
+      `;
+
+      itemsContainer.appendChild(itemElement);
+    });
+
+    subtotalElement.textContent = `R${subtotal.toFixed(2)}`;
+    totalElement.textContent = `R${subtotal.toFixed(2)}`;
+  }
+
+  // Make sure button calls this
+  document.getElementById("proceed-to-checkout")?.addEventListener("click", showCheckoutPage);
+</script>
+
+
+
+</body>
+
+</html>
